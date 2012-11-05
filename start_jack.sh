@@ -1,14 +1,17 @@
 #!/bin/bash
 # start_jack.sh: Start JACK audio server using QjackCtl.
 # author: Michael Floering
-
-# Extremely simple!
-# Open QjackCtl and immediately start (the -s arg does this).
 #
-# Does not use launch like the other scripts do, because
-# JACK is a requirement. QjackCtl doesn't necessarily have to be used;
-# modify this file accordingly if you wish to launch jack differently,
-# for example launching it directly.
+# Open QjackCtl and immediately start, loading the specified preset if set.
+# Accepts named parameter jack_preset - should be path to a qjackctl preset
+
+source $(dirname $0)/colorize.sh
+source $(dirname $0)/launch_if_possible.sh
 
 echo "==> Open qjackctl and immediately start JACK server" | colorize yellow
-qjackctl -s &
+if [ -z "${preset}" ]; then
+    echo "... Got preset" | colorize blue
+    launch qjackctl --start --preset=${preset} &
+else
+    launch qjackctl --start &
+fi
