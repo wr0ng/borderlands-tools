@@ -19,7 +19,7 @@ function launch {
     # next, open $1 only if they have it
     if test $has_it -eq 0
     then
-        echo "==> Start $1 with arguments $@" | colorize yellow
+        echo "==> Start $1 with arguments provided" | colorize yellow
         "$@" &
     else
         echo "==> Does not have $1; skipping" | colorize red
