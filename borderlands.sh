@@ -1,5 +1,5 @@
 #!/bin/bash
-# borederlands.sh: start a session of Borderlands Granular.
+# borderlands.sh: start a session of Borderlands Granular.
 # author: Michael Floering
 # 
 # What it does:
