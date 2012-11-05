@@ -1,5 +1,5 @@
 <!DOCTYPE qjackctlSession>
-<session name="qjackctl_presets">
+<session name="qjackctl">
  <client name="rakarrack">
   <port type="in" name="in_1">
    <connect port="outport 0" client="RtApiJack"/>
@@ -40,8 +40,8 @@
  <client name="system">
   <port type="out" name="capture_1">
    <connect port="front-left" client="PulseAudio JACK Source"/>
-   <connect port="inport 0" client="RtApiJack"/>
    <connect port="in_2" client="rakarrack"/>
+   <connect port="inport 0" client="RtApiJack"/>
   </port>
   <port type="out" name="capture_2">
    <connect port="front-right" client="PulseAudio JACK Source"/>
