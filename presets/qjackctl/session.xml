@@ -1,0 +1,67 @@
+<!DOCTYPE qjackctlSession>
+<session name="qjackctl_presets">
+ <client name="rakarrack">
+  <port type="in" name="in_1">
+   <connect port="outport 0" client="RtApiJack"/>
+  </port>
+  <port type="in" name="in_2">
+   <connect port="capture_1" client="system"/>
+   <connect port="outport 1" client="RtApiJack"/>
+  </port>
+  <port type="in" name="aux"/>
+  <port type="out" name="out_1">
+   <connect port="playback_1" client="system"/>
+  </port>
+  <port type="out" name="out_2">
+   <connect port="playback_2" client="system"/>
+  </port>
+  <port type="in" name="in"/>
+  <port type="out" name="MC out"/>
+ </client>
+ <client name="PulseAudio JACK Source">
+  <port type="in" name="front-left">
+   <connect port="capture_1" client="system"/>
+  </port>
+  <port type="in" name="front-right">
+   <connect port="capture_2" client="system"/>
+  </port>
+ </client>
+ <client name="RtApiJack">
+  <port type="out" name="outport 0">
+   <connect port="in_1" client="rakarrack"/>
+  </port>
+  <port type="out" name="outport 1">
+   <connect port="in_2" client="rakarrack"/>
+  </port>
+  <port type="in" name="inport 0">
+   <connect port="capture_1" client="system"/>
+  </port>
+ </client>
+ <client name="system">
+  <port type="out" name="capture_1">
+   <connect port="front-left" client="PulseAudio JACK Source"/>
+   <connect port="inport 0" client="RtApiJack"/>
+   <connect port="in_2" client="rakarrack"/>
+  </port>
+  <port type="out" name="capture_2">
+   <connect port="front-right" client="PulseAudio JACK Source"/>
+  </port>
+  <port type="in" name="playback_1">
+   <connect port="front-left" client="PulseAudio JACK Sink"/>
+   <connect port="out_1" client="rakarrack"/>
+  </port>
+  <port type="in" name="playback_2">
+   <connect port="front-right" client="PulseAudio JACK Sink"/>
+   <connect port="out_2" client="rakarrack"/>
+  </port>
+ </client>
+ <client name="PulseAudio JACK Sink">
+  <port type="out" name="front-left">
+   <connect port="playback_1" client="system"/>
+  </port>
+  <port type="out" name="front-right">
+   <connect port="playback_2" client="system"/>
+  </port>
+ </client>
+</session>
+
