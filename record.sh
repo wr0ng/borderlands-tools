@@ -5,6 +5,15 @@
 source $(dirname $0)/colorize.sh
 source $(dirname $0)/launch_if_possible.sh
 
+while getopts "a" opt; do
+  case $opt in
+    p)
+      echo "Got -a; will use audacity" | colorize blue
+      audacity=true
+      ;;
+  esac
+done
+
 if [[ -n "${audacity}" ]]; then
     echo "... Got flag audacity" | colorize blue
     echo "==> Launch audacity" | colorize yellow

@@ -1,8 +1,26 @@
-- Arguments like --audacity are broken: need to find actual way to
-   test if an argument is passed. [[ -n ${named_argument}]] is not
-   cutting it. This implies changes in like three files.
-- Have you broken the opening of meterbridge for jack_capture, by
-   supressing its output? :( Yes it looks like it.
+Some options are working, some aren't.
+For example:
+- "-x rak" successfully launches rakarrack
+- but -a does not launch audacity
 
-- Then you need to check if it actually even loads a jack preset
-- 
+Now, onto figuring out why not qjackctl presets loading.
+Seems also to be an option error ... ???
+
+
+Now onto - can we programmatically load qjackctl presets?
+Because we need to reload or refresh the preset *after* everything
+   else is open.
+
+As an alternative, what if it switches focus between windows and puts
+   qjackctl in front for you to do something?
+
+
+
+
+
+
+New thought:
+Would it be possible to make a unity launcher that allows you to drag
+   wav files onto the Borderlands icon, and have it copy those files
+   into /loops/????????????????//
+At the very least there should be a right click option for "Open loops folder"

@@ -14,16 +14,23 @@ source $(dirname $0)/colorize.sh
 ############################
 
 # Parse options
-while getopts "r:x:" opt; do
+while getopts "aj:r:x:" opt; do
   case $opt in
+    a)
+      echo "Got -a; will record with audacity" | colorize blue
+      audacity=true
+      ;;
+    j)
+      echo "Got -j $OPTARG - will use qjackctl preset $OPTARG" | colorize blue
+      qjackctl_preset=$OPTARG
+      ;;
     r)
-      echo "Got -r $OPTARG - will record with $OPTARG" | colorize blue
+      echo "Got -r $OPTARG - will use rakarrack preset $OPTARG" | colorize blue
+      rakarrack_preset=$OPTARG
       ;;
     x)
       echo "Got -x $OPTARG - will launch extra $OPTARG" | colorize blue
-      ;;
-    \?)
-      echo "Invalid option: $OPTARG" | colorize red
+      extra=$OPTARG
       ;;
   esac
 done
@@ -36,7 +43,11 @@ borderlands_tools_dir=`pwd`
 ################
 
 echo "==> Starting JACK" | colorize yellow
-bash start_jack.sh --preset=${jack_preset}
+if [[ -n $qjackctl_preset ]]; then
+    bash start_jack.sh -p $qjackctl_preset
+else
+    bash start_jack.sh
+fi
 
 ## Sleep
 # Change the numbers here if you need it to sleep for longer
@@ -72,10 +83,9 @@ cd $borderlands_tools_dir
 ## Start extra stuff ##
 #######################
 
-if [[ -n "${rak}" ]]; then
-    echo "... Got flag rak (meaning rakarrack)" | colorize blue
+if [[ $extra = 'rak' ]]; then
     echo "==> Launching rakarrack" | colorize yellow
-    bash start_rakarrack.sh --preset=${rak_preset}
+    bash start_rakarrack.sh -p $rakarrack_preset
 fi
 
 #####################
@@ -83,8 +93,8 @@ fi
 #####################
 
 echo "==> Starting recording" | colorize yellow
-if [[ -n "${audacity}" ]]; then
-    bash record.sh --audacity
+if [[ -n "$audacity" ]]; then
+    bash record.sh -a
 else
     bash record.sh
 fi

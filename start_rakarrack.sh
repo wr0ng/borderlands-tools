@@ -7,11 +7,21 @@
 source $(dirname $0)/colorize.sh
 source $(dirname $0)/launch_if_possible.sh
 
-## Use default preset unless over-ridden
-if [ -z ${preset}]; then
-    preset=presets/rakarrack/factory7.rk
-else
-    preset=${preset}
+while getopts "p:" opt; do
+  case $opt in
+    p)
+      echo "Got -p $OPTARG; will use this preset for rakarrack" | colorize blue
+      preset=$OPTARG
+      ;;
+    \?)
+      echo "Invalid option: $OPTARG" | colorize red
+      ;;
+  esac
+done
+
+## Use default preset unless over-ridden - -z kind of means "not"
+if [[ -z $preset ]]; then
+    preset=presets/rak/factory7.rk
 fi
 
 echo "==> Attempting to launch rakarrack" | colorize yellow

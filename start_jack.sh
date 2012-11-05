@@ -8,10 +8,19 @@
 source $(dirname $0)/colorize.sh
 source $(dirname $0)/launch_if_possible.sh
 
+while getopts "p:" opt; do
+  case $opt in
+    p)
+      echo "Got -p $OPTARG; will use this preset for qjackctl" | colorize blue
+      preset=$OPTARG
+      ;;
+  esac
+done
+
 echo "==> Opening qjackctl and immediately starting JACK server" | colorize yellow
-if [ "${preset}" ]; then
+if [[ -n "$preset" ]]; then
     echo "... Got preset" | colorize blue
-    launch qjackctl --start --preset=${preset} &
+    launch qjackctl --start --preset=$preset &
 else
     launch qjackctl --start &
 fi
