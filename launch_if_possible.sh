@@ -20,9 +20,18 @@ function launch {
     if test $has_it -eq 0
     then
         echo "==> Start $1 with arguments provided" | colorize yellow
-        "$@" &
+        "$@" &>$(dirname $0)/log_$1.log &
+        #    ^ sends to named log ($1 is name)
+        #                               ^ starts it detached
+        status=$?
     else
         echo "==> Does not have $1; skipping" | colorize red
     fi
 
+    # finally print success/fail of that last command
+    if test $status -eq 0; then #if last command was successful
+        echo "... Successfully started $1" | colorize green
+    else
+        echo "... Failed to start $1" | colorize red
+    fi
 }

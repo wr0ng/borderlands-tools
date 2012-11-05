@@ -8,8 +8,8 @@
 source $(dirname $0)/colorize.sh
 source $(dirname $0)/launch_if_possible.sh
 
-echo "==> Open qjackctl and immediately start JACK server" | colorize yellow
-if [ -z "${preset}" ]; then
+echo "==> Opening qjackctl and immediately starting JACK server" | colorize yellow
+if [ "${preset}" ]; then
     echo "... Got preset" | colorize blue
     launch qjackctl --start --preset=${preset} &
 else

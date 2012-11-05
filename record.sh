@@ -3,11 +3,21 @@
 # author: Michael Floering
 
 source $(dirname $0)/colorize.sh
+source $(dirname $0)/launch_if_possible.sh
 
-echo "Make directory 'jack_capture_output' and cd into it" | colorize yellow
-mkdir jack_capture_output
-cd jack_capture_output
+if [ -n "${audacity}"]; then
+    echo "... Got flag audacity" | colorize blue
+    echo "==> Launch audacity" | colorize yellow
+    echo "!!! Notice: Audacity does not accept arguments from the terminal so if you want to record with it, you must do this manually." | colorize red
+    launch audacity
+else
+    echo "... Using jack_capture for recording" | colorize blue
+    # Open a new terminal, in which you use launch_if_possible's launch function
+    # to launch jack_capture (or print error messages if the program isn't
+    # installed)
+    bash start_jack_capture.sh
+    # You can change gnome-terminal to another terminal emulator if you need to.
+fi
 
-echo "Starting jack-capture with meterbridge in a new terminal" | colorize yellow
-# Change gnome-terminal to another terminal emulator if you need to
-gnome-terminal -x jack_capture -c 2 -mb &
+#echo "==> Returning to previous directory" | colorize yellow
+#cd - >/dev/null
