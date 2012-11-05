@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Borderlands
-Comment="Start Borderlands, JACK, and/or related processes"
-Exec="/home/m/bin/borderlands-tools/borderlands.sh"
-Terminal=false
-Categories=Utility;Application;
