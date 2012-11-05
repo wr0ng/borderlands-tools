@@ -1,0 +1,8 @@
+- Arguments like --audacity are broken: need to find actual way to
+   test if an argument is passed. [[ -n ${named_argument}]] is not
+   cutting it. This implies changes in like three files.
+- Have you broken the opening of meterbridge for jack_capture, by
+   supressing its output? :( Yes it looks like it.
+
+- Then you need to check if it actually even loads a jack preset
+- 

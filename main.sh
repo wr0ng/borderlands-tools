@@ -23,7 +23,7 @@ echo "==> Starting JACK" | colorize yellow
 bash start_jack.sh --preset=${jack_preset}
 
 ## Sleep
-if [ -z "${sleep_seconds}" ]; then # if not --sleep_seconds set, set a default
+if [[ -z "${sleep_seconds}" ]]; then # if not --sleep_seconds set, set a default
     sleep_seconds=3
 else
     sleep_seconds=${sleep_seconds}
@@ -61,7 +61,7 @@ cd - >/dev/null
 ## Start extra stuff ##
 #######################
 
-if [ -n "${rak}"]; then
+if [[ -n "${rak}" ]]; then
     echo "... Got flag rak (meaning rakarrack)" | colorize blue
     echo "==> Launching rakarrack" | colorize yellow
     bash start_rakarrack.sh --preset=${rak_preset}
@@ -72,7 +72,7 @@ fi
 #####################
 
 echo "==> Starting recording" | colorize yellow
-if [ -n "${audacity}"]; then
+if [[ -n "${audacity}" ]]; then
     bash record.sh --audacity
 else
     bash record.sh

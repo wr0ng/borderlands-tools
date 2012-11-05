@@ -5,7 +5,7 @@
 source $(dirname $0)/colorize.sh
 source $(dirname $0)/launch_if_possible.sh
 
-if [ -n "${audacity}"]; then
+if [[ -n "${audacity}" ]]; then
     echo "... Got flag audacity" | colorize blue
     echo "==> Launch audacity" | colorize yellow
     echo "!!! Notice: Audacity does not accept arguments from the terminal so if you want to record with it, you must do this manually." | colorize red
