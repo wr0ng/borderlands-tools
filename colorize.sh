@@ -11,6 +11,7 @@ colorize(){
     gray="\033[0;37m"
     blue="\033[0;34m"
     yellow="\033[0;33m"
+    red="\033[0;31m"
     NORMAL="\033[m"
     color=\$${1:-NORMAL}
     # activate color passed as argument

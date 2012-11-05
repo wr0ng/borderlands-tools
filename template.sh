@@ -10,6 +10,8 @@
 # cp template.sh new_shell_script_name.sh
 
 source $(dirname $0)/colorize.sh
+source $(dirname $0)/launch_if_possible.sh
  
 echo "==> I am green in this area" | colorize green
-# some command
+# now run the command described above
+launch foo
