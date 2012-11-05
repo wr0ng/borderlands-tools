@@ -4,7 +4,7 @@
 # source: http://askubuntu.com/questions/135214/pipable-command-to-print-in-color
 # modified by: Michael Floering
 
-# colorize stdin according to parameter passed (GREEN, CYAN, BLUE, YELLOW)
+# colorize stdin according to parameter passed (green, cyan, gray, blue ...)
 colorize(){
     green="\033[0;32m"
     cyan="\033[0;36m"

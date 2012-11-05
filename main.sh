@@ -13,7 +13,23 @@ source $(dirname $0)/colorize.sh
 ## Initialize some things ##
 ############################
 
-borderlands_tools_dir=`pwd` # Need to put those quotes to evaluate right now
+# Parse options
+while getopts "r:x:" opt; do
+  case $opt in
+    r)
+      echo "Got -r $OPTARG - will record with $OPTARG" | colorize blue
+      ;;
+    x)
+      echo "Got -x $OPTARG - will launch extra $OPTARG" | colorize blue
+      ;;
+    \?)
+      echo "Invalid option: $OPTARG" | colorize red
+      ;;
+  esac
+done
+
+# evaluate pwd (hence `quotes`) and save
+borderlands_tools_dir=`pwd`
 
 ################
 ## Start JACK ##
@@ -23,14 +39,9 @@ echo "==> Starting JACK" | colorize yellow
 bash start_jack.sh --preset=${jack_preset}
 
 ## Sleep
-if [[ -z "${sleep_seconds}" ]]; then # if not --sleep_seconds set, set a default
-    sleep_seconds=3
-else
-    sleep_seconds=${sleep_seconds}
-fi
-echo "... Sleeping for ${sleep_seconds} seconds while QJackCtl starts" | colorize blue
-
-sleep $sleep_seconds
+# Change the numbers here if you need it to sleep for longer
+echo "... Sleeping for 3 seconds while QJackCtl starts" | colorize blue
+sleep 3s
 
 #######################
 ## Start Borderlands ##
@@ -55,7 +66,7 @@ else
 fi
 
 echo "==> Returning to previous directory" | colorize yellow
-cd - >/dev/null
+cd $borderlands_tools_dir
 
 #######################
 ## Start extra stuff ##
