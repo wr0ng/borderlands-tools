@@ -1,0 +1,33 @@
+<!DOCTYPE patchbay>
+<patchbay version="0.3.8" name="rakarrack">
+ <output-sockets>
+  <socket exclusive="off" client="RtApiJack" type="jack-audio" name="Borderlands">
+   <plug>outport 0</plug>
+  </socket>
+  <socket exclusive="off" client="rakarrack" type="jack-audio" name="rakarrack">
+   <plug>out_1</plug>
+   <plug>out_2</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket exclusive="off" client="rakarrack" type="jack-audio" name="rakarrack">
+   <plug>in_2</plug>
+   <plug>in_1</plug>
+  </socket>
+  <socket exclusive="off" client="jack_capture" type="jack-audio" name="jack_capture">
+   <plug>input1</plug>
+   <plug>input2</plug>
+  </socket>
+  <socket exclusive="off" client="jack_capture_meterbridge" type="jack-audio" name="Input Socket 3">
+   <plug>meter_1</plug>
+   <plug>meter_2</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable output="Borderlands" input="rakarrack" type="jack-audio"/>
+  <cable output="rakarrack" input="jack_capture" type="jack-audio"/>
+  <cable output="rakarrack" input="Input Socket 3" type="jack-audio"/>
+ </cables>
+</patchbay>
+
