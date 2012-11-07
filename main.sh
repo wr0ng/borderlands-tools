@@ -85,7 +85,7 @@ cd $borderlands_tools_dir
 
 if [[ $extra = 'rak' ]]; then
     echo "==> Launching rakarrack" | colorize yellow
-    bash start_rakarrack.sh -p $rak_preset
+    bash start_rakarrack.sh #-p $rak_preset
 fi
 
 #####################
