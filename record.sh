@@ -7,7 +7,7 @@ source $(dirname $0)/launch_if_possible.sh
 
 while getopts "a" opt; do
   case $opt in
-    p)
+    a)
       echo "Got -a; will use audacity" | colorize blue
       audacity=true
       ;;
