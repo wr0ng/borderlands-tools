@@ -1,23 +1,8 @@
-Some options are working, some aren't.
-For example:
-- "-x rak" successfully launches rakarrack
-- but -a does not launch audacity
-
-Now, onto figuring out why not qjackctl presets loading.
-Seems also to be an option error ... ???
-
-
-Now onto - can we programmatically load qjackctl presets?
-Because we need to reload or refresh the preset *after* everything
-   else is open.
-
-As an alternative, what if it switches focus between windows and puts
-   qjackctl in front for you to do something?
-
-
-
-
-
+Qjackctl solution lies in the PATCHBAY functionality;
+sessions are NOT what you want.
+So try again but loading patches not presets
+you have a fully working patchbay for rakarrack set up working
+so try that
 
 New thought:
 Would it be possible to make a unity launcher that allows you to drag
