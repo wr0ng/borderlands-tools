@@ -20,10 +20,10 @@ while getopts "aj:r:x:" opt; do
       echo "Got -a; will record with audacity" | colorize blue
       audacity=true
       ;;
-    j)
-      echo "Got -j $OPTARG - will use qjackctl preset $OPTARG" | colorize blue
-      qjackctl_preset=$OPTARG
-      ;;
+#    j)
+#      echo "Got -j $OPTARG - will use qjackctl preset $OPTARG" | colorize blue
+#      qjackctl_preset=$OPTARG
+#      ;;
     r)
       echo "Got -r $OPTARG - will use rakarrack preset $OPTARG" | colorize blue
       rakarrack_preset=$OPTARG
@@ -43,8 +43,8 @@ borderlands_tools_dir=`pwd`
 ################
 
 echo "==> Starting JACK" | colorize yellow
-if [[ -n $qjackctl_preset ]]; then
-    bash start_jack.sh -p $qjackctl_preset
+if [[ $extra = 'rak' ]]; then
+    bash start_jack.sh -p #'presets/jack/rak/'
 else
     bash start_jack.sh
 fi
