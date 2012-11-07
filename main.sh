@@ -44,7 +44,7 @@ borderlands_tools_dir=`pwd`
 
 echo "==> Starting JACK" | colorize yellow
 if [[ $extra = 'rak' ]]; then
-    bash start_jack.sh -p #'presets/jack/rak/'
+    bash start_jack.sh -p 'qjackctl_patchbays/rak.xml'
 else
     bash start_jack.sh
 fi
@@ -66,7 +66,7 @@ cd ~/Borderlands*/Borderlands/
 echo "==> Starting Borderlands" | colorize yellow
 ./Borderlands &>$borderlands_tools_dir/log_borderlands.log &
 #             ^ sends output to named log
-#                                                           ^ starts it detached from terminal
+#                                                          ^ starts it detached from terminal
 status=$?
 if test $status -eq 0 #successful
 then
@@ -85,7 +85,7 @@ cd $borderlands_tools_dir
 
 if [[ $extra = 'rak' ]]; then
     echo "==> Launching rakarrack" | colorize yellow
-    bash start_rakarrack.sh -p $rakarrack_preset
+    bash start_rakarrack.sh -p $rak_preset
 fi
 
 #####################

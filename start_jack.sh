@@ -10,17 +10,18 @@ source $(dirname $0)/launch_if_possible.sh
 
 while getopts "p:" opt; do
   case $opt in
-    p)
-      echo "Got -p $OPTARG; will use this preset for qjackctl" | colorize blue
-      preset=$OPTARG
+    p) # to qjackctl -p means preset, and -a means patchbay;
+       # but to us -a means audacity, so -p is gonna mean patchbay
+      echo "Got -p $OPTARG; will use this patchbay for qjackctl" | colorize blue
+      patchbay=$OPTARG
       ;;
   esac
 done
 
 echo "==> Opening qjackctl and immediately starting JACK server" | colorize yellow
-if [[ -n "$preset" ]]; then
-    echo "... Got preset" | colorize blue
-    launch qjackctl --start --preset=$preset &
+if [[ -n "$patchbay" ]]; then
+    echo "... Got patchbay" | colorize blue
+    launch qjackctl --start --active-patchbay=$patchbay &
 else
     launch qjackctl --start &
 fi
