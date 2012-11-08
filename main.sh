@@ -1,17 +1,30 @@
 #!/bin/bash
 # main.sh: start a session of Borderlands Granular.
 # author: Michael Floering
-# 
+#
+# TODO: document arguments
+#
 # What it does:
 # 1) start JACK (via QjackCtl)
+# 1.5) sleep while JACK initializes
 # 2) start Borderlands
-# 3) start recording
+# 3) start extras (currently, rakarrack is the only option)
+# 4) start recording - with jack_capture or audacity
+# 5) start moc (music on console: a command-line based media player)
+# 6) rearrange windows into a really usable arrangement
+# 7) wait for user to 'press any key'
+# 8) close all programs opened, using wmctrl
 
-source $(dirname $0)/colorize.sh
+
+source $(dirname $0)/colorize.sh # echo hi | colorize yellow
+source $(dirname $0)/name_terminal.sh # name_terminal newname
 
 ############################
 ## Initialize some things ##
 ############################
+
+# Name terminal
+name_terminal borderlands-tools
 
 # Parse options
 while getopts "aj:r:x:" opt; do
@@ -113,19 +126,26 @@ if [[ -z "$audacity" ]]; then
     bash start_mocp.sh
 fi
 
+#######################
+## Rearrange windows ##
+#######################
+
+wmctrl -r rakarrack -t 1
+wmctrl -a 'MOC'
+
 
 ##############################################
 ## Wait for user command to quit everything ##
 ##############################################
 
-echo "==> Press any key to quit all programs opened by this script..." | colorize cyan
+echo "==> Press any key to quit all programs opened by this script" | colorize cyan
 
 read -n 1 -s
 
-wmctrl -c borderlands
-wmctrl -c moc
-wmctrl -c rakarrack
-wmctrl -c jack_capture
-wmctrl -c jack
+wmctrl -F -c 'Borderlands' # -F makes it exact
+wmctrl -c 'MOC'
+wmctrl -c 'rakarrack'
+wmctrl -c 'jack_capture'
+wmctrl -c 'JACK Audio Connection Kit'
 
 echo "... Good-bye!" | colorize green
