@@ -130,7 +130,8 @@ fi
 ## Rearrange windows ##
 #######################
 
-wmctrl -r rakarrack -t 1
+sleep 2s
+wmctrl -a 'Borderlands'
 wmctrl -a 'MOC'
 
 
