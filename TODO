@@ -1,12 +1,8 @@
-1) Use wmctrl to move everything to different places, with borderlands
-   covering up the current terminal and moc ... and have those be the
-   only ones for workspace one; so that when you close borderlands the 
-   first thing
-   you see is the terminal that launched it, from which you can press
-   any key and quit everything.
-2) Redo the patchbay to include moc going into input 3 of
-   jack_capture. Save that.
-3) also save a patchbay that doesn't use rakarrack.
+X) Is MOC broken?
+
+1) Now that we have four jack capture channels and have things routed
+   right, does it work as expected ??
+2) Unity Launcher
 
 
 New thought:

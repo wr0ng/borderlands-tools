@@ -19,13 +19,16 @@
    <plug>in_1</plug>
   </socket>
   <socket exclusive="off" client="jack_capture" type="jack-audio" name="jack_capture">
-   <plug>L</plug>
-   <plug>R</plug>
-   <plug>synctrack</plug>
+   <plug>input1</plug>
+   <plug>input2</plug>
+   <plug>input3</plug>
+   <plug>input4</plug>
   </socket>
   <socket exclusive="off" client="jack_capture_meterbridge" type="jack-audio" name="meterbridge">
    <plug>meter_1</plug>
    <plug>meter_2</plug>
+   <plug>meter_3</plug>
+   <plug>meter_4</plug>
   </socket>
   <socket exclusive="off" client="system" type="jack-audio" name="system-out">
    <plug>playback_1</plug>
@@ -35,11 +38,11 @@
  <slots/>
  <cables>
   <cable output="Borderlands" input="rakarrack" type="jack-audio"/>
+  <cable output="moc" input="system-out" type="jack-audio"/>
+  <cable output="moc" input="jack_capture" type="jack-audio"/>
   <cable output="rakarrack" input="jack_capture" type="jack-audio"/>
   <cable output="rakarrack" input="meterbridge" type="jack-audio"/>
   <cable output="rakarrack" input="system-out" type="jack-audio"/>
-  <cable output="moc" input="jack_capture" type="jack-audio"/>
-  <cable output="moc" input="system-out" type="jack-audio"/>
  </cables>
 </patchbay>
 

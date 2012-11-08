@@ -12,7 +12,7 @@ mkdir -p recorded # -p makes it not throw error if it exists already
 cd recorded
 
 echo "==> Starting jack_capture in this terminal" | colorize yellow
-gnome-terminal -t jack_capture -x jack_capture -c 3 -mb &
+gnome-terminal -t jack_capture -x jack_capture -c 4 -mb &
 status=$?
 if test $status -eq 0 #successful
 then
