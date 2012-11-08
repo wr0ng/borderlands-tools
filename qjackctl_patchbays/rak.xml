@@ -1,8 +1,12 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.3.8" name="rakarrack">
+<patchbay version="0.3.8" name="rak">
  <output-sockets>
   <socket exclusive="off" client="RtApiJack" type="jack-audio" name="Borderlands">
    <plug>outport 0</plug>
+  </socket>
+  <socket exclusive="off" client="moc" type="jack-audio" name="moc">
+   <plug>output0</plug>
+   <plug>output1</plug>
   </socket>
   <socket exclusive="off" client="rakarrack" type="jack-audio" name="rakarrack">
    <plug>out_1</plug>
@@ -15,19 +19,27 @@
    <plug>in_1</plug>
   </socket>
   <socket exclusive="off" client="jack_capture" type="jack-audio" name="jack_capture">
-   <plug>input1</plug>
-   <plug>input2</plug>
+   <plug>L</plug>
+   <plug>R</plug>
+   <plug>synctrack</plug>
   </socket>
-  <socket exclusive="off" client="jack_capture_meterbridge" type="jack-audio" name="Input Socket 3">
+  <socket exclusive="off" client="jack_capture_meterbridge" type="jack-audio" name="meterbridge">
    <plug>meter_1</plug>
    <plug>meter_2</plug>
+  </socket>
+  <socket exclusive="off" client="system" type="jack-audio" name="system-out">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
   </socket>
  </input-sockets>
  <slots/>
  <cables>
   <cable output="Borderlands" input="rakarrack" type="jack-audio"/>
   <cable output="rakarrack" input="jack_capture" type="jack-audio"/>
-  <cable output="rakarrack" input="Input Socket 3" type="jack-audio"/>
+  <cable output="rakarrack" input="meterbridge" type="jack-audio"/>
+  <cable output="rakarrack" input="system-out" type="jack-audio"/>
+  <cable output="moc" input="jack_capture" type="jack-audio"/>
+  <cable output="moc" input="system-out" type="jack-audio"/>
  </cables>
 </patchbay>
 

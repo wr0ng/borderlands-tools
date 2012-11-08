@@ -57,7 +57,7 @@ borderlands_tools_dir=`pwd`
 
 echo "==> Starting JACK" | colorize yellow
 if [[ $extra = 'rak' ]]; then
-    bash start_jack.sh -p 'qjackctl_patchbays/rak.xml'
+    bash start_jack.sh -p './qjackctl_patchbays/rak.xml'
 else
     bash start_jack.sh
 fi
@@ -130,10 +130,15 @@ fi
 ## Rearrange windows ##
 #######################
 
+# Tile the under-layer of windows
+bash tilewindow.sh borderlands-tools jack_capture meterbridge
+
+# Need to sleep a bit before we can ...
 sleep 2s
+# ... Bring MOC to the front (so you can start playing a song)
+
 wmctrl -a 'Borderlands'
 wmctrl -a 'MOC'
-
 
 ##############################################
 ## Wait for user command to quit everything ##
