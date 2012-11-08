@@ -98,3 +98,34 @@ if [[ -n "$audacity" ]]; then
 else
     bash record.sh
 fi
+
+
+########################
+## Start audio player ##
+########################
+
+# Happens last with the hope that it will create this window in FRONT of Borderlands, since usually you'll want to start audio playing, first thingy
+
+# If NOT audacity -- i.e. starting audacity and starting mocp are exclusive,
+# because it would be redundant to use both (and require a different config to
+# do so)
+if [[ -z "$audacity" ]]; then
+    bash start_mocp.sh
+fi
+
+
+##############################################
+## Wait for user command to quit everything ##
+##############################################
+
+echo "==> Press any key to quit all programs opened by this script..." | colorize cyan
+
+read -n 1 -s
+
+wmctrl -c borderlands
+wmctrl -c moc
+wmctrl -c rakarrack
+wmctrl -c jack_capture
+wmctrl -c jack
+
+echo "... Good-bye!" | colorize green

@@ -1,8 +1,13 @@
-Qjackctl solution lies in the PATCHBAY functionality;
-sessions are NOT what you want.
-So try again but loading patches not presets
-you have a fully working patchbay for rakarrack set up working
-so try that
+1) Use wmctrl to move everything to different places, with borderlands
+   covering up the current terminal and moc ... and have those be the
+   only ones for workspace one; so that when you close borderlands the 
+   first thing
+   you see is the terminal that launched it, from which you can press
+   any key and quit everything.
+2) Redo the patchbay to include moc going into input 3 of
+   jack_capture. Save that.
+3) also save a patchbay that doesn't use rakarrack.
+
 
 New thought:
 Would it be possible to make a unity launcher that allows you to drag
