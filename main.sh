@@ -126,6 +126,8 @@ if [[ -z "$audacity" ]]; then
     bash start_mocp.sh
 fi
 
+mocp -v 80 # Set volume a little lower
+
 #######################
 ## Rearrange windows ##
 #######################

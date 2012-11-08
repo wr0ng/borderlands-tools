@@ -21,7 +21,7 @@ done
 
 ## Use default preset unless over-ridden - -z kind of means "not"
 if [[ -z $preset ]]; then
-    preset=presets/rak/factory7.rk
+    preset=presets/rak/default.rkr
 fi
 
 echo "==> Attempting to launch rakarrack" | colorize yellow
