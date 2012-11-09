@@ -6,13 +6,16 @@ source $(dirname $0)/colorize.sh
 
 # use select_audiofile.sh to prompt use and ask which file to play
 source $(dirname $0)/select_audiofile.sh
-select_audiofile
+select_audiofile # sets $selected_audiofile
 
-# TODO: Make dir configurable
-echo "==> Starting playback of audio file using jack.play" | colorize yellow
-gnome-terminal -t backtrackplayback -x jack.play -n backtrackplayback -u $selected_audiofile &
-status=$?
-if test $status -eq 0 #successful
-then
-    echo "... Successfully opened a new terminal running jack.play" | colorize green
+if [ $selected_audiofile ]; then
+    echo "==> Starting playback of audio file using jack.play" | colorize yellow
+    gnome-terminal -t backtrackplayback -x jack.play -n backtrackplayback -u $selected_audiofile &
+    status=$?
+    if test $status -eq 0 #successful
+    then
+        echo "... Successfully opened a new terminal running jack.play" | colorize green
+    fi
+else
+    echo "==> Continuing without backtrack" | colorize green
 fi

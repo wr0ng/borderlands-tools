@@ -13,7 +13,7 @@ function select_audiofile {
     echo "#===========================================#" | colorize blue 
     echo "??? What backtrack would you like to play ???" | colorize yellow
     echo "#===========================================#" | colorize blue
-    PS3="Enter number: " #prompt
+    PS3="==> Enter number: " #prompt
 
     # we will use a glob expression to list only libsndfile-readable audiofiles.
     # this shell option will silence the output from glob that occurs from
@@ -29,6 +29,8 @@ function select_audiofile {
         break  
     done
 
-    echo "You picked $FILENAME (number $REPLY)." | colorize green
-
+    if [ $selected_audiofile ]; then
+        echo "... You picked $FILENAME (number $REPLY)." | colorize green
+    fi
+ 
 } # select_audiofile. sets $selected_audiofile
