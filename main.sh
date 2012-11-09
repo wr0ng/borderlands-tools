@@ -26,6 +26,9 @@ source $(dirname $0)/name_terminal.sh # name_terminal newname
 # Name terminal
 name_terminal borderlands-tools
 
+# Kill all instances of moc - to prevent moc glitching
+bash kill_moc.sh
+
 # Parse options
 while getopts "aj:r:x:" opt; do
   case $opt in
@@ -126,8 +129,6 @@ if [[ -z "$audacity" ]]; then
     bash start_mocp.sh
 fi
 
-mocp -v 80 # Set volume a little lower
-
 #######################
 ## Rearrange windows ##
 #######################
@@ -152,6 +153,7 @@ read -n 1 -s
 
 wmctrl -F -c 'Borderlands' # -F makes it exact
 wmctrl -c 'MOC'
+bash kill_moc.sh #<-- MOC is troublesome sometimes; forcibly kill
 wmctrl -c 'rakarrack'
 wmctrl -c 'jack_capture'
 wmctrl -c 'JACK Audio Connection Kit'

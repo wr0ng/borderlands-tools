@@ -1,4 +1,24 @@
 X) Is MOC broken?
+   --> Yes, it is not stable with JACK unfortunately.
+   ==> Use jack.play;
+       Invoke with: jack.play -n backtrackplayback -u ~/Music/Crystalis*.wav
+       -n renames the process
+       -u makes it not append PID
+   ==> So copy over start_mocp.sh to start_jack_play.sh, make
+   alterations
+       Add comment to start_mocp.sh that it isn't stable with this set
+   up...
+       Invoke start_jack_play.sh from main.sh instead ...
+
+   ==> OUTSTANDING QUESTION:
+       How do we tell it which file to play?
+  1) Have a magic folder where it plays back the first one
+  2) Have a prompt that takes what you type as the argument for what
+   to play
+  3) Have a magic folder, have it list the contents with numbers next
+   to them, then have it ask you which # you want to play (DING DING
+   DING)
+     --> This should happen first thing, before anything else is invoked...   
 
 1) Now that we have four jack capture channels and have things routed
    right, does it work as expected ??
