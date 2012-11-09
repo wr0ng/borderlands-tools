@@ -152,6 +152,7 @@ read -n 1 -s
 
 wmctrl -F -c 'Borderlands' # -F makes it exact
 wmctrl -c 'rakarrack'
+wmctrl -c 'backtrackplayback'
 wmctrl -c 'jack_capture'
 wmctrl -c 'JACK Audio Connection Kit'
 

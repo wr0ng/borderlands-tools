@@ -5,11 +5,11 @@
 source $(dirname $0)/colorize.sh
 source $(dirname $0)/launch_if_possible.sh 
 
-audio_file="TODO"
+selected_audiofile="TODO"
 
 # TODO: Make dir configurable
 echo "==> Starting playback of audio file using jack.play" | colorize yellow
-gnome-terminal -x jack.play -n backtrackplayback -u $audio_file
+gnome-terminal -t backtrackplayback -x jack.play -n backtrackplayback -u $selected_audiofile &
 status=$?
 if test $status -eq 0 #successful
 then
