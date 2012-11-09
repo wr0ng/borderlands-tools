@@ -10,16 +10,16 @@
 # 2) start Borderlands
 # 3) start extras (currently, rakarrack is the only option)
 # 4) start recording - with jack_capture or audacity
-# 5) start moc (music on console: a command-line based media player)
-# 6) rearrange windows into a really usable arrangement
+# 5) start jack.play for playback
+#   a) prompt user asking them which audiofile to play
+#   b) begin playing that file
+# 6) rearrange windows a little
 # 7) wait for user to 'press any key'
 # 8) close all programs opened, using wmctrl
 
-
+source $(dirname $0)/config.cfg # load user-specific configuration
 source $(dirname $0)/colorize.sh # echo hi | colorize yellow
 source $(dirname $0)/name_terminal.sh # name_terminal newname
-
-source $(dirname $0)/configuration.cfg # load user-specific configuration
 
 ############################
 ## Initialize some things ##
@@ -27,9 +27,6 @@ source $(dirname $0)/configuration.cfg # load user-specific configuration
 
 # Name terminal
 name_terminal borderlands-tools
-
-# Kill all instances of moc - to prevent moc glitching
-bash kill_moc.sh
 
 # Parse options
 while getopts "aj:r:x:" opt; do
@@ -56,6 +53,8 @@ borderlands_tools_dir=`pwd`
 ## Start JACK ##
 ################
 
+# Jack should be called with a patchbay specific to each EXTRA
+
 echo "==> Starting JACK" | colorize yellow
 if [[ $extra = 'rak' ]]; then
     bash start_jack.sh -p './qjackctl_patchbays/rak.xml'
@@ -65,8 +64,8 @@ fi
 
 ## Sleep
 # Change the numbers here if you need it to sleep for longer
-echo "... Sleeping for 3 seconds while QJackCtl starts" | colorize blue
-sleep 3s
+echo "... Sleeping for $sleep_seconds seconds while QJackCtl starts" | colorize blue
+sleep $sleep_seconds
 
 #######################
 ## Start Borderlands ##
@@ -124,7 +123,7 @@ fi
 # because it would be redundant to use both (and require a different config to
 # do so)
 if [[ -z "$audacity" ]]; then
-    #bash start_mocp.sh
+    # start_jack_play.sh asks which audio file to play then plays it
     bash start_jack_play.sh
 fi
 
@@ -157,3 +156,7 @@ wmctrl -c 'jack_capture'
 wmctrl -c 'JACK Audio Connection Kit'
 
 echo "... Good-bye!" | colorize green
+
+#wmctrl -c 'borderlands-tools'
+
+exit 0

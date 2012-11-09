@@ -1,3 +1,9 @@
+1) make select_audiofile (try - but fail gracefully - to) read in a
+   config var for what folder is the backtracks folder. Which defaults
+   to ./backtracks but can be changed to any folder.
+2) make selected_audiofile available to main.sh
+
+
 
    ==> OUTSTANDING QUESTION:
        How do we tell it which file to play?
