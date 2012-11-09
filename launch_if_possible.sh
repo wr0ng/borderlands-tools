@@ -34,5 +34,6 @@ function launch {
         echo "... Successfully started $1" | colorize green
     else
         echo "... Failed to start $1" | colorize red
+        exit 1
     fi
 }
