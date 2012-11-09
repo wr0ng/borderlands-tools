@@ -1,28 +1,12 @@
-1) make select_audiofile (try - but fail gracefully - to) read in a
-   config var for what folder is the backtracks folder. Which defaults
-   to ./backtracks but can be changed to any folder.
-2) make selected_audiofile available to main.sh
-
-
-
-   ==> OUTSTANDING QUESTION:
-       How do we tell it which file to play?
-  1) Have a magic folder where it plays back the first one
-  2) Have a prompt that takes what you type as the argument for what
-   to play
-  3) Have a magic folder, have it list the contents with numbers next
-   to them, then have it ask you which # you want to play (DING DING
-   DING)
-     --> This should happen first thing, before anything else is invoked...   
-
-** Make launch EXIT 1 if something isn't installed ...
-
+0.5) make path to borderlands configurable
 1) Now that we have four jack capture channels and have things routed
    right, does it work as expected ??
 
-1.5) Load configuration file for things like audacity, meterbridge
-
 1.75) can Borderlands/loops consist of symlinks?
+1.8) If so, can we make an icon that executes making links to files
+   passed to it, in the loops directory? Just a script that acts on an
+   arbitrary number of files, making a link to each one, in the
+   desired directory
 
 2) Unity Launcher
 

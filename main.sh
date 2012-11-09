@@ -71,10 +71,10 @@ sleep $sleep_seconds
 ## Start Borderlands ##
 #######################
 
-echo "==> Changing into ~/Borderlands*/Borderlands directory" | colorize yellow
+echo "==> Changing into Borderlands directory set in config" | colorize yellow
 # Wildcard used so it is not version-contingent, but this will break
 # if you have more than one folder that matches.
-cd ~/Borderlands*/Borderlands/
+cd $borderlands_directory
 
 echo "==> Starting Borderlands" | colorize yellow
 ./Borderlands &>$borderlands_tools_dir/log_borderlands.log &
