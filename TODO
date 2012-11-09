@@ -1,14 +1,3 @@
-X) Is MOC broken?
-   --> Yes, it is not stable with JACK unfortunately.
-   ==> Use jack.play;
-       Invoke with: jack.play -n backtrackplayback -u ~/Music/Crystalis*.wav
-       -n renames the process
-       -u makes it not append PID
-   ==> So copy over start_mocp.sh to start_jack_play.sh, make
-   alterations
-       Add comment to start_mocp.sh that it isn't stable with this set
-   up...
-       Invoke start_jack_play.sh from main.sh instead ...
 
    ==> OUTSTANDING QUESTION:
        How do we tell it which file to play?
@@ -20,8 +9,15 @@ X) Is MOC broken?
    DING)
      --> This should happen first thing, before anything else is invoked...   
 
+** Make launch EXIT 1 if something isn't installed ...
+
 1) Now that we have four jack capture channels and have things routed
    right, does it work as expected ??
+
+1.5) Load configuration file for things like audacity, meterbridge
+
+1.75) can Borderlands/loops consist of symlinks?
+
 2) Unity Launcher
 
 

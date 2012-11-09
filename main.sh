@@ -19,6 +19,8 @@
 source $(dirname $0)/colorize.sh # echo hi | colorize yellow
 source $(dirname $0)/name_terminal.sh # name_terminal newname
 
+source $(dirname $0)/configuration.cfg # load user-specific configuration
+
 ############################
 ## Initialize some things ##
 ############################
@@ -36,10 +38,6 @@ while getopts "aj:r:x:" opt; do
       echo "Got -a; will record with audacity" | colorize blue
       audacity=true
       ;;
-#    j)
-#      echo "Got -j $OPTARG - will use qjackctl preset $OPTARG" | colorize blue
-#      qjackctl_preset=$OPTARG
-#      ;;
     r)
       echo "Got -r $OPTARG - will use rakarrack preset $OPTARG" | colorize blue
       rakarrack_preset=$OPTARG
@@ -126,7 +124,8 @@ fi
 # because it would be redundant to use both (and require a different config to
 # do so)
 if [[ -z "$audacity" ]]; then
-    bash start_mocp.sh
+    #bash start_mocp.sh
+    bash start_jack_play.sh
 fi
 
 #######################
@@ -138,10 +137,10 @@ bash tilewindow.sh borderlands-tools jack_capture meterbridge
 
 # Need to sleep a bit before we can ...
 sleep 2s
-# ... Bring MOC to the front (so you can start playing a song)
+# ... Bring things to the front
 
 wmctrl -a 'Borderlands'
-wmctrl -a 'MOC'
+wmctrl -a 'borderlands-tools' # bring to front so you cna see prompt
 
 ##############################################
 ## Wait for user command to quit everything ##
@@ -152,8 +151,6 @@ echo "==> Press any key to quit all programs opened by this script" | colorize c
 read -n 1 -s
 
 wmctrl -F -c 'Borderlands' # -F makes it exact
-wmctrl -c 'MOC'
-bash kill_moc.sh #<-- MOC is troublesome sometimes; forcibly kill
 wmctrl -c 'rakarrack'
 wmctrl -c 'jack_capture'
 wmctrl -c 'JACK Audio Connection Kit'
