@@ -10,7 +10,7 @@ These scripts depend on the following programs.
 - QjackCtl
 - Rakarrack
 - jack_capture
-- moc (music on console)
+- jack-tools
 
 
 You can get all of these - except for Borderlands - with the following command:
