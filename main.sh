@@ -106,11 +106,12 @@ fi
 ###########################################
 
 echo "==> Starting recording" | colorize yellow
-if [ -z $audacity ]; then # if NOT audacity
+if ! $audacity ; then
     # if NOT audacity, run start_jack_play.sh which
     #   a) asks which file to play (halting the script) then
     #   b) starts playing it
-    # && start recording, so they're ALMOST at the same time.
+    # && start recording -
+    #    so they're as close as possible to being simultaneously started
     bash start_jack_play.sh && bash record.sh
 else
     # audacity handles recording AND backtrack playback if desired.
@@ -124,10 +125,13 @@ fi
 # Tile the under-layer of windows
 bash tilewindow.sh borderlands-tools jack_capture
 
-# Sleep a moment then bring things forward
+# Sleep a moment then order the layering of windows using xdotool windowraise
 sleep 2s
-wmctrl -a 'Borderlands'
-wmctrl -a 'borderlands-tools' # bring to front so you cna see prompt
+
+xdotool search --name 'borderlands-tools' windowraise
+xdotool search --name 'rakarrack' windowraise
+xdotool search --name 'meterbridge' windowraise
+xdotool search --name 'Borderlands' windowraise
 
 ##############################################
 ## Wait for user command to quit everything ##
@@ -150,5 +154,3 @@ fi
 echo "... Good-bye!" | colorize green
 
 wmctrl -c 'borderlands-tools'
-
-exit 0

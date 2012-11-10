@@ -9,6 +9,9 @@ source $(dirname $0)/config.cfg
 source $(dirname $0)/colorize.sh
 
 function select_audiofile {
+    # focus this window; assumes currently that the name is borderlands-tools
+    xdotool search --name 'borderlands-tools' windowraise
+
     # ask user, then use select to create a menu
     echo "#===========================================#" | colorize blue 
     echo "??? What backtrack would you like to play ???" | colorize yellow

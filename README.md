@@ -1,5 +1,7 @@
 
+## Compatibility
 
+Written on/for Ubuntu 12.04 LTS. If you try it in another environment, please let me know how it goes!
 
 ## Prerequisites
 
@@ -8,10 +10,10 @@ These scripts depend on the following programs.
 - Borderlands
 - JACK Audio Connection Kit
 - QjackCtl
-- Rakarrack
+- rakarrack
 - jack_capture
 - jack-tools
-
+- xdotools
 
 You can get all of these - except for Borderlands - with the following command:
 
