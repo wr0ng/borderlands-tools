@@ -8,27 +8,23 @@
    <plug>out_1</plug>
    <plug>out_2</plug>
   </socket>
-  <socket exclusive="off" client="backtrackplayback" type="jack-audio" name="jack.play">
+  <socket exclusive="on" client="backtrackplayback" type="jack-audio" name="jack.play">
    <plug>out_1</plug>
    <plug>out_2</plug>
   </socket>
  </output-sockets>
  <input-sockets>
-  <socket exclusive="off" client="rakarrack" type="jack-audio" name="rakarrack">
+  <socket exclusive="on" client="rakarrack" type="jack-audio" name="rakarrack">
    <plug>in_2</plug>
    <plug>in_1</plug>
   </socket>
-  <socket exclusive="off" client="jack_capture" type="jack-audio" name="jack_capture">
+  <socket exclusive="on" client="jack_capture" type="jack-audio" name="jack_capture">
    <plug>input1</plug>
    <plug>input2</plug>
-   <plug>input3</plug>
-   <plug>input4</plug>
   </socket>
-  <socket exclusive="off" client="jack_capture_meterbridge" type="jack-audio" name="meterbridge">
+  <socket exclusive="on" client="jack_capture_meterbridge" type="jack-audio" name="meterbridge">
    <plug>meter_1</plug>
    <plug>meter_2</plug>
-   <plug>meter_3</plug>
-   <plug>meter_4</plug>
   </socket>
   <socket exclusive="off" client="system" type="jack-audio" name="system-out">
    <plug>playback_1</plug>
