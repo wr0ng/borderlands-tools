@@ -101,30 +101,20 @@ if [[ $extra = 'rak' ]]; then
     bash start_rakarrack.sh #-p $rak_preset
 fi
 
-#####################
-## Start recording ##
-#####################
+###########################################
+## Start recording && backtrack playback ##
+###########################################
 
 echo "==> Starting recording" | colorize yellow
-if [[ -n "$audacity" ]]; then
-    bash record.sh -a
+if [ -z $audacity ]; then # if NOT audacity
+    # if NOT audacity, run start_jack_play.sh which
+    #   a) asks which file to play (halting the script) then
+    #   b) starts playing it
+    # && start recording, so they're ALMOST at the same time.
+    bash start_jack_play.sh && bash record.sh
 else
-    bash record.sh
-fi
-
-
-########################
-## Start audio player ##
-########################
-
-# Happens last with the hope that it will create this window in FRONT of Borderlands, since usually you'll want to start audio playing, first thingy
-
-# If NOT audacity -- i.e. starting audacity and starting mocp are exclusive,
-# because it would be redundant to use both (and require a different config to
-# do so)
-if [[ -z "$audacity" ]]; then
-    # start_jack_play.sh asks which audio file to play then plays it
-    bash start_jack_play.sh
+    # audacity handles recording AND backtrack playback if desired.
+    bash record.sh -a
 fi
 
 #######################
@@ -132,12 +122,10 @@ fi
 #######################
 
 # Tile the under-layer of windows
-bash tilewindow.sh borderlands-tools jack_capture meterbridge
+bash tilewindow.sh borderlands-tools jack_capture
 
-# Need to sleep a bit before we can ...
+# Sleep a moment then bring things forward
 sleep 2s
-# ... Bring things to the front
-
 wmctrl -a 'Borderlands'
 wmctrl -a 'borderlands-tools' # bring to front so you cna see prompt
 
@@ -147,7 +135,7 @@ wmctrl -a 'borderlands-tools' # bring to front so you cna see prompt
 
 echo "==> Press any key to quit all programs opened by this script" | colorize cyan
 
-read -n 1 -s
+read -n 1 -s # waits for any key press
 
 wmctrl -F -c 'Borderlands' # -F makes it exact
 wmctrl -c 'rakarrack'
@@ -155,8 +143,12 @@ wmctrl -c 'backtrackplayback'
 wmctrl -c 'jack_capture'
 wmctrl -c 'JACK Audio Connection Kit'
 
+if $audacity; then
+    echo "!!! Not closing audacity so you don't lose unsaved work"
+fi
+
 echo "... Good-bye!" | colorize green
 
-#wmctrl -c 'borderlands-tools'
+wmctrl -c 'borderlands-tools'
 
 exit 0

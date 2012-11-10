@@ -8,15 +8,15 @@ source $(dirname $0)/launch_if_possible.sh
 while getopts "a" opt; do
   case $opt in
     a)
-      echo "Got -a; will use audacity" | colorize blue
+      echo "... record.sh got -a; will use audacity" | colorize blue
       audacity=true
       ;;
   esac
 done
 
 if [[ -n "${audacity}" ]]; then
-    echo "... Got flag audacity" | colorize blue
-    echo "==> Launch audacity" | colorize yellow
+    #echo "... Got flag audacity" | colorize blue
+    echo "==> Launching audacity" | colorize yellow
     echo "!!! Notice: Audacity does not accept arguments from the terminal so if you want to record with it, you must do this manually." | colorize red
     launch audacity
 else

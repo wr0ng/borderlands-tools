@@ -13,7 +13,7 @@ mkdir -p recorded # -p makes it not throw error if it exists already
 cd recorded
 
 echo "==> Starting jack_capture in this terminal" | colorize yellow
-if [ $meterbridge ]; then
+if $meterbridge; then
     gnome-terminal -t jack_capture -x jack_capture -c 4 &
 else
     gnome-terminal -t jack_capture -x jack_capture -c 4 -mb &
