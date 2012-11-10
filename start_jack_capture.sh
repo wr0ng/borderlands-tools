@@ -14,9 +14,9 @@ cd recorded
 
 echo "==> Starting jack_capture in this terminal" | colorize yellow
 if $meterbridge; then
-    gnome-terminal -t jack_capture -x jack_capture -c 4 -mb &
+    gnome-terminal -t jack_capture -x jack_capture -mb & #removed: -c 4
 else
-    gnome-terminal -t jack_capture -x jack_capture -c 4 &
+    gnome-terminal -t jack_capture -x jack_capture & #removed: -c 4
 fi
 
 status=$?
