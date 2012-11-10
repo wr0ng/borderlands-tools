@@ -24,16 +24,23 @@ function select_audiofile {
     # in your directory, etc.)
     shopt -s nullglob
 
+    # change into backtracks_directory
+    cd $backtracks_directory
+
     # the glob below is a quick transcription of the table of supported formats
     # found here: http://www.mega-nerd.com/libsndfile/
-    select FILENAME in $backtracks_directory/*.{wav,ogg,raw,snd,au,paf,svx,iff,sf,voc,w64,pvf,mat4,mat5,xi,htk,caf,sd2,flac};
+    select FILENAME in *.{wav,ogg,raw,snd,au,paf,svx,iff,sf,voc,w64,pvf,mat4,mat5,xi,htk,caf,sd2,flac};
     do
-        selected_audiofile=$FILENAME
+        selected_audiofile=$backtracks_directory$FILENAME
         break  
     done
 
-    if [ $selected_audiofile ]; then
+    if [ -z "$selected_audiofile" ] ; then
+        echo "... No backtrack" | colorize green
+    else
         echo "... You picked $FILENAME (number $REPLY)." | colorize green
     fi
+
+    cd - >/dev/null
  
 } # select_audiofile. sets $selected_audiofile

@@ -8,7 +8,7 @@ source $(dirname $0)/colorize.sh
 source $(dirname $0)/select_audiofile.sh
 select_audiofile # sets $selected_audiofile
 
-if [ $selected_audiofile ]; then
+if [ $selected_audiofile ] ; then
     echo "==> Starting playback of audio file using jack.play" | colorize yellow
     gnome-terminal -t backtrackplayback -x jack.play -n backtrackplayback -u $selected_audiofile &
     status=$?

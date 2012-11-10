@@ -123,7 +123,7 @@ fi
 #######################
 
 # Tile the under-layer of windows
-bash tilewindow.sh borderlands-tools jack_capture
+#bash tilewindow.sh borderlands-tools jack_capture
 
 # Sleep a moment then order the layering of windows using xdotool windowraise
 sleep 2s
