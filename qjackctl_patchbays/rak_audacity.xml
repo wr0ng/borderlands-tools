@@ -1,0 +1,39 @@
+<!DOCTYPE patchbay>
+<patchbay version="0.3.8" name="rak_audacity">
+ <output-sockets>
+  <socket exclusive="off" client="RtApiJack" type="jack-audio" name="borderlands_out">
+   <plug>outport 0</plug>
+   <plug>outport 1</plug>
+  </socket>
+  <socket exclusive="off" client="rakarrack" type="jack-audio" name="rakarrack_out">
+   <plug>out_1</plug>
+   <plug>out_2</plug>
+  </socket>
+  <socket exclusive="off" client="PulseAudio JACK Sink" type="jack-audio" name="audacity_out">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket exclusive="off" client="rakarrack" type="jack-audio" name="rakarrack_in">
+   <plug>in_1</plug>
+   <plug>in_2</plug>
+  </socket>
+  <socket exclusive="off" client="PulseAudio JACK Source" type="jack-audio" name="audacity_in">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket exclusive="off" client="system" type="jack-audio" name="systemoutput_in">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable output="rakarrack_out" input="audacity_in" type="jack-audio"/>
+  <cable output="rakarrack_out" input="systemoutput_in" type="jack-audio"/>
+  <cable output="borderlands_out" input="rakarrack_in" type="jack-audio"/>
+  <cable output="audacity_out" input="systemoutput_in" type="jack-audio"/>
+ </cables>
+</patchbay>
+
