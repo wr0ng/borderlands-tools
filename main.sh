@@ -9,10 +9,12 @@
 # 1.5) sleep while JACK initializes
 # 2) start Borderlands
 # 3) start extras (currently, rakarrack is the only option)
-# 4) start recording - with jack_capture or audacity
-# 5) start jack.play for playback
+# 4) start jack.play for playback
 #   a) prompt user asking them which audiofile to play
 #   b) begin playing that file
+# &&
+# 5) start recording with jack_capture
+# (alternate: can use audacity for backtrack-and-recording instead)
 # 6) rearrange windows a little
 # 7) wait for user to 'press any key'
 # 8) close all programs opened, using wmctrl

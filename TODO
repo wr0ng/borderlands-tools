@@ -1,7 +1,6 @@
-
-1) Now that we have four jack capture channels and have things routed
-   right, does it work as expected ??
-
+1) Still need to fix jack patchbay.
+   a) only one speaker is going into jack_capture??
+   b) jack play is still going into jack-capture ??
 1.75) can Borderlands/loops consist of symlinks?
 1.8) If so, can we make an icon that executes making links to files
    passed to it, in the loops directory? Just a script that acts on an
@@ -10,9 +9,5 @@
 
 2) Unity Launcher
 
+3) Put licenses everywhere
 
-New thought:
-Would it be possible to make a unity launcher that allows you to drag
-   wav files onto the Borderlands icon, and have it copy those files
-   into /loops/????????????????//
-At the very least there should be a right click option for "Open loops folder"
