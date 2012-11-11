@@ -19,7 +19,7 @@ function render_with_real_home {
 } # render_with_real_home
 
 # do that for both .desktop files
-render_with_real_home Borderlands.desktop
+render_with_real_home BorderlandsLauncher.desktop
 render_with_real_home BorderlandsLoopManager.desktop
 
 echo "==> Making everything executable" | colorize yellow
@@ -32,9 +32,11 @@ echo "==> Moving .desktop files to ~/.local/share/applications" | colorize yello
 
 # move the .desktop files to the magical place
 cp BorderlandsLauncher.desktop ~/.local/share/applications/BorderlandsLauncher.desktop
-cp BorderlandsLoopsManager.desktop ~/.local/share/applications/BorderlandsLoopsManager.desktop
+cp BorderlandsLoopManager.desktop ~/.local/share/applications/BorderlandsLoopManager.desktop
 
 # open folder there
 nautilus ~/.local/share/applications
 
 echo "!!! Now, drag BorderlandsLauncher and BorderlandsLoopsManager onto your launcher panel. Then right click each icon and click 'Keep in Launcher' if you want to keep them there. Press any key to finish." | colorize red
+
+read -n 1 -s # waits for any key press
