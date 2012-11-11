@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Name=BorderlandsLauncher
+Comment=Open JACK, Borderlands, Rakarrack, and Audacity
+Exec=$HOME/bin/borderlands-tools/main.sh -x rak
+Icon=$HOME/bin/borderlands-tools/icons/main.png
+Terminal=true
+Type=Application
+Categories=Utility;Application;
+
+Actions=NoRakarrack;
+
+[Desktop Action NoRakarrack]
+Name=BorderlandsLauncher without Rakarrack
+Exec=$HOME/bin/borderlands-tools/main.sh
+OnlyShowIn=Unity;

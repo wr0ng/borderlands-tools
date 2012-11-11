@@ -1,0 +1,18 @@
+[Desktop Entry]
+Version=1.0
+Name=BorderlandsLoopsManager
+Comment=Copy a loop or loops into the Borderlands/loops directory
+Exec=$HOME/bin/borderlands-tools/loop_add.sh
+Icon=$HOME/bin/borderlands-tools/icons/loop_add.png
+Terminal=false
+Type=Application
+Categories=Utility;
+
+MimeType=audio/x-aiff;audio/x-wav;
+
+Actions=ClearLoops;
+
+[Desktop Action ClearLoops]
+Name=Clear loops folder
+Exec=$HOME/bin/borderlands-tools/loops_clear.sh
+OnlyShowIn=Unity;
