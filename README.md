@@ -10,20 +10,28 @@ You'll need to install prerequisites and/or configure a few things before starti
 
 This is how you'll use the first utility if you're just playing.
 
-1. Open BorderlandsLauncher by clicking its launcher icon.
+1. Open **BorderlandsLauncher** by clicking its launcher icon.
+
+![BorderlandsLauncher][launcher]
+
 2. Start playing!
 
 This is how you'll use it if you're playing over a backtrack and/or recording your session.
 
 1. Open **BorderlandsLauncher** by clicking its launcher icon.
+
+![BorderlandsLauncher][launcher]
+
 2. Get Audacity rolling.
-    a. Switch to the Audacity window. (To un-maximize Borderlands press `o`.)
+  * Switch to the Audacity window. (To un-maximize Borderlands press `o`.)
 
-    b. To configure Audacity, set audio host to JACK, output device to PulseAudio JACK Source, and input device to PulseAudio JACK Sink. TODO: Add screenshot
+  * To configure Audacity, set audio host to JACK, output device to PulseAudio JACK Source, and input device to PulseAudio JACK Sink.
 
-    c. Open or import your backtrack if you desire.
+![Configuring audacity][audacity]
 
-    d. Click record. This will also start playback.
+  * Open or import your backtrack if you desire.
+
+  * Click record. This will also start playback.
 
 3. Switch back to the Borderlands window (and press `o` to maximize it again if necessary). 
 
@@ -31,16 +39,25 @@ This is how you'll use it if you're playing over a backtrack and/or recording yo
 
 After you've finished playing, you'll switch back to Audacity and export or save as necessary. Then you can switch windows to the borderlands-tools terminal and press any key to quit all programs.
 
+[launcher]: icons/BorderlandsLauncherScreenshot.png
+[audacity]: ConfiguringAudacityHelp.png
+
 #### Less-effects mode
 
 By right clicking the BorderlandsLauncher icon you also get an option to launch the setup without Rakarrack.
 
 ## II. Managing loops
 
-The second utility is called BorderlandsLoopManager. It has two functions:
+The second utility is called **BorderlandsLoopManager**.
+
+![BorderlandsLauncher][loop]
+
+It has two functions:
 
 * You can drag `.wav` and `.aiff` files onto it, and they will be made available to Borderlands. (Symbolic links to the files will be made in Borderlands's `loops` folder.)
 * There is a button in the right-click menu to clear the Borderlands `loops` folder. This only destroys links, and affects none of your audio files.
+
+[loop]: icons/BorderlandsLoopManagerScreenshot.png
 
 # How to set up borderlands-tools
 

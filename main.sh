@@ -131,9 +131,10 @@ fi
 # Sleep a moment then order the layering of windows using xdotool windowraise
 sleep 2s
 
-xdotool search --name 'borderlands-tools' windowraise
-xdotool search --name 'rakarrack' windowraise
+#xdotool search --name 'borderlands-tools' windowraise
+#xdotool search --name 'rakarrack' windowraise
 #xdotool search --name 'meterbridge' windowraise
+#case 
 xdotool search --name 'Borderlands' windowraise
 
 ##############################################
