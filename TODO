@@ -1,1 +1,11 @@
-Write a TODO detailing every planned change
+- test again
+- README
+   - Add screenshot of the obvious way to change the audio settings in
+   Audacity, on that little panel
+
+
+- Write a TODO detailing every planned change
+   - Switch back to text-based playback and recording as the default;
+   - Use straight JACK (maybe even no QjackCtl) for plumbing:
+   seemingly it's actually easier to use commands to connect programs
+   persistently, than to use a graphical interface http://digitaldub.wordpress.com/2009/12/16/linux-audio-session-scripting/

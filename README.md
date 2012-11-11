@@ -1,46 +1,50 @@
-## Goal
+# What borderlands-tools does
 
-The goal is to make it easy to start playing with and recording Borderlands granular synth on Ubuntu. Running it using the Unity Launcher icon - or with the command `bash main.sh -x rak` - opens up a rack like this:
+The main function of borderlands-tools is  to launch [Borderlands granular](https://ccrma.stanford.edu/~carlsonc/256a/Borderlands/) with some auxiliary programs: JACK (using QjackCtl), Rakarrack (an effects rack), and Audacity. Using borderlands-tools, it should take about 10 seconds to get playing with Borderlands, or about 30 seconds if you're playing over a backtrack and recording your session.
 
-     Borderlands synth -> Rakarrack effects rack -
-                                                  \    Levels meters,
-                                                   =>  Recording,
-                                                  /    and system sound out
-                         Playback of a backtrack -
+The scripts are not that fancy or clever, but I find that the less time taken between inspiration and action, the better (especially when it comes to music).
 
-In prose, this setup is: Borderlands synth being fed into Rakarrack effects rack, alongside playback of a backtrack (via jack-tools), both streams being fed into three outputs: levels meters (via meterbridge), recording (via jack_capture), and the system sound output. All of it is patched together using QjackCtl to manage the JACK Audio Connection Kit.
+You'll need to install prerequisites and/or configure a few things before starting, but for the impatient here's how to use the two utilities in this package.
 
-It can get very repetitive to start all of this up manually every time you want to play with Borderlands. Hopefully this fixes that.
+## Instant granification
 
-### Scope
+This is how you'll use the first utility.
 
-This was supposed to (a) make my life and a friend's life easier and (b) be a first dive into bash scripting. As such it took an inordinate amount of time to write ... and probably has a lot of room for improvement. I'm putting it up here on the off-chance that it's helpful to someone else. At the moment it has only been tested in my own environment and for my own purposes, with limited time. But if you use it and find issues or room for improvement please report them, as I will be continuing to work on this.
+1. Open BorderlandsLauncher by clicking its launcher icon.
+2. Get Audacity going if you wish to play over something or record your session. Otherwise skip to step 3.
 
-### Incomplete work
+    a. Switch to the Audacity window. (To un-maximize Borderlands press `o`.)
 
-#### Synchronized recording of backtrack and jams
+    b. To configure Audacity, set audio host to JACK, output device to PulseAudio JACK Source, and input device to PulseAudio JACK Sink. TODO: Add screenshot
 
-In order to minimize discrepancies between the backtrack and the newly recorded Borderlands output, I aimed to record the backtrack and Borderlands into the same output file. The output would be a `.wavex` file with 4 channels, and so we'd have a recording which keeps the backtrack and Borderlands completely in sync.
+    c. If you desire to record over another track, open or import it now.
 
-Unfortunately it seems like QjackCtl's Patchbay functionality is a limiting factor here. I was able to send the two tracks to jack_capture together, but was not able to keep them separate (i.e. the resulting output was four channels, two of them with BOTH streams mixed, and two empty ones).
+    d. Click record. This will start playback and recording in sync.
 
-This is the next issue I'd like to address with this script, so hopefully I can find the time.
+3. Switch back to the Borderlands window (and press `o` to maximize it again if necessary). 
 
-As a workaround, you can do the playback-and-recording with Audacity. Note that on my system, however, that incurs some clicks and so on to happen. This is the reason I went with lightweight, console-based playback and recording tools. Everything's a trade-off I guess!
+4. Start playing!
 
-#### Being able to (a) not use rakarrack or (b) use a different "extra"
+After you've finished playing, you'll switch back to Audacity and export or save as necessary. Then you can switch windows to the borderlands-tools terminal and press any key to quit all programs.
 
-This *currently* comes packaged with the appropriate QjackCtl patchbay preset to automatically connect all the programs launched - to get going! - *if* you are using rakarrack. That's the primary use case I imagined.
+#### Less effects mode
 
-However as of v0.1 it does not come packaged with any other QjackCtl presets. So, if you want to *not* use rakarrack, you'll have to wire the patchbay yourself.
+By right clicking the BorderlandsLauncher icon you also get an option to launch the setup without Rakarrack.
 
-## Setting up borderlands-tools
+## Managing loops
 
-### Compatibility
+The second utility is called BorderlandsLoopManager. It has two functions:
 
-Written on/for Ubuntu 12.04 LTS. If you try it in another environment, please let me know how it goes!
+* You can drag `.wav` and `.aiff` files onto it, and they will be made available to Borderlands. (Symbolic links to the files will be made in Borderlands's `loops` folder.)
+* There is a button in the right-click menu to clear the Borderlands `loops` folder. This only destroys links, and affects none of your audio files.
 
-### Prerequisites
+# Setting up borderlands-tools
+
+## Compatibility
+
+Written on/for Ubuntu 12.04 but it should work anywhere there's bash, as long as you install the prerequisites (Borderlands, Rakarrack, etc. - see below).
+
+## Install prerequisites
 
 These scripts depend on the following programs.
 
@@ -48,50 +52,85 @@ These scripts depend on the following programs.
 - JACK Audio Connection Kit
 - QjackCtl
 - rakarrack
-- jack_capture
-- jack-tools
-- xdotools
+- Audacity
 
-You can get all of these - except for Borderlands - with the following command:
+You should be able to get all of these - except for Borderlands - with the following command:
 
-    sudo apt-get install qjackctl rakarrack jack_capture jack-tools xdotools
+    sudo apt-get install qjackctl jackd2 libjack-jackd2-dev rakarrack audacity
+### Need to install Borderlands?
 
-If you haven't obtained and installed Borderlands yet, go [here](https://ccrma.stanford.edu/~carlsonc/256a/Borderlands/) for the primary (open source) release, or [here](https://github.com/hangtwenty/borderlands-granular-pitch-patch) for my little patch of it. If you are using Ubuntu 12.04, see [here](http://hangtwenty.ruhoh.com/posts/building-borderlands-granular-on-ubuntu-12-04-lts) for my tutorial on how to obtain the various prerequisites necessary to compile it.
+If you haven't installed Borderlands yet, go [here](https://ccrma.stanford.edu/~carlsonc/256a/Borderlands/) for the primary (open source) release, or [here](https://github.com/hangtwenty/borderlands-granular-pitch-patch) for my little patch of it. If you are using Ubuntu 12.04, see [here](http://hangtwenty.ruhoh.com/posts/building-borderlands-granular-on-ubuntu-12-04-lts) for my tutorial on how to obtain the various prerequisites necessary to compile it.
 
-### How to use borderlands-tools
+## Run the setup script
 
-1) Open borderlands-tools by double-clicking its icon
-2) A bunch of things will open! It should come to rest with Borderlands full-screen and on top. (This is just how Borderlands opens by default and unfortunately neither `wmctrl` nor `xdotools` can get around this!)
-3) Click anywhere in Borderlands to focus it.
-4) Press the `o` key (letter o, not zero). This is the keyboard shortcut to un-maximize Borderlands.
-5) Look for the borderlands-tools terminal. It has printed out a list of backtracks and is asking you which one you want to use.
-6) Type the number of the desired backtrack.
-7) Windows will flash around again as jack.play and jack_capture open, ending with Borderlands up in front.
-8) Click back in Borderlands window and press `o` again to maximize.
-9) Start playing!
-...
-10) To finish, switch back to borderlands-tools window, and press any key. It will close all of the programs it opened in a graceful order, and hopefully none of them will give you warnings :)
+Setting up borderlands-tools is quick and easy.
 
-This is just how I go about it, but there are other ways you could do it depending on how you like to switch between windows. `Super + W` is another good way to switch between windows. (`Super` is the Windows or Mac key, etc.) 
+First you need to either put the `borderlands-tools` repository in `~/bin/borderlands-tools`, or put it somewhere else and change the appropriate setting in the configuration file, `config.cfg`.
 
-You can find your recordings in the `recorded` directory of this repository. (TODO: Make this configurable.)
+Next open a terminal and enter:
 
-## Recommended Rakarrack configuration
+    cd ~/bin/borderlands-tools/ # or wherever else you put it
+    bash setup.sh
 
-By default rakarrack starts with FX off (meaning wet mix 0%) and you have to turn it on manually. Fortunately rakarrack makes it very easy to change this setting:
+It will create two Unity Launchers (files with the `.desktop` extension), `BorderlandsLauncher` and `BorderlandsLoopManager`. It will then copy these into `~/.local/share/applications`, the folder where Ubuntu stores your user's Unity Launchers, and open a nautilus file browser in that folder.
+
+Drag `BorderlandsLauncher` and `BorderlandsLoopManager` onto your launcher. Lastly right click them and click "Lock to Launcher" if necessary.
+
+## Configure Rakarrack
+
+By default rakarrack starts with FX off (meaning wet mix 0%) and you have to turn FX on manually, each time you boot. Fortunately Rakarrack makes it very easy to change this setting:
 
 Settings menu > Preferences > Audio tab > FX On at Start (first option)
 
-## How to customize settings of borderlands-tools
+I would also recommend turning down the master output a few decibels so that cliclipping isn't a risk.
 
-### config.cfg
+## That's it
 
-In this repository there is a file `config.cfg`. It contains several settings that you can adjust to your needs. Notably, you can change the path to Borderlands on your system, and the folder that the script looks in for backtracks.
+You are absolutely ready to use the BorderlandsLauncher and BorderlandsLoopManager now. Have fun!
 
-### Rakarrack default preset
+# Configuring borderlands-tools (optional)
 
-Rakarrack lets you save presets easily. The script defaults to loading `default.rkr` in the `rak_presets` directory. That means you have two ways to change the default preset: either save a new one over this file, or alter the relevant script (`start_rakarrack.sh`).
+## config.cfg
+
+In this repository there is a file `config.cfg`. It contains several settings that you can adjust to your needs. Notably, you can specify where your copy of Borderlands lives, and you can make it so that the "clear loops" function just executes without asking you if you're sure (my preference).
+
+## Rakarrack default preset
+
+Rakarrack lets you save presets easily. The script defaults to loading `default.rkr` in the `rak_presets` directory. That means you have two ways to change the default preset: either save a new one over this file, or alter `start_rakarrack.sh` to load a different preset.
+
+# Ubuntu window-switching-fu
+
+If you don't already know this, holding `Super` in Ubuntu will present you with a bunch of super useful keyboard shortcuts. (The `Super` key is the 'operating system' key, with a Windows, Mac, or another logo.)
+
+These are the shortcuts I find most useful for working with Linux audio. (It seems that all the tools I use have their own little windows, and it can get messy quick.)
+
+* `Super + W` spreads all windows in the current workspace
+* `Ctrl + Tab` and the cursor keys lets you switch between applications
+* `Alt + F4` closes the current window (and exits the program)
+
+Then there are these extra productive keyboard shortcuts for moving things among workspaces. I like to spread all of the windows opened by borderlands-tools to three different workspaces, to minimize layering. (I tried to automate this process but it looks like it's not very portable - what would work for me wouldn't necessarily work for you).
+
+* `Ctrl + Alt + cursor keys` to switch workspaces
+* `Ctrl + Alt + Shift + cursor keys` to switch workspaces and *bring the active window with you*.
+
+# Stuff about the package (TLDR)
+
+## No guarantees!
+
+I wrote this because it was imminently useful to me and to a friend. It doubled as my first adventure into bash scripting. I wasn't able to achieve everything I wanted with it and had to roll back some features that would have made this much more fancy. It has only been tested on Ubuntu 12.04.
+
+## Incomplete work (that may or may not come to fruition)
+
+### Being able to use text-based playback and recording
+
+This would use less computation, and was the original intention for the package. However I haven't been able to get the JACK connections to persist between launches in a predictable fashion.
+
+### Being able to use a different "extra"
+
+This *currently* comes packaged with the appropriate QjackCtl patchbay preset to automatically connect all the programs launched - to get going! - *if* you are using rakarrack. That's the primary use case I imagined.
+
+However as of v0.1 it does not come packaged with any other QjackCtl presets. So, if you want to *not* use rakarrack, you'll have to wire the patchbay yourself.
 
 ## License
 
-Release under the MIT license. See LICENSE in this repository.
+Released under the MIT license. See LICENSE in this repository.
