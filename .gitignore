@@ -13,3 +13,6 @@ tramp
 
 # logs
 *.log
+
+# .desktop files
+*.desktop
