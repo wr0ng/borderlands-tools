@@ -1,13 +1,1 @@
-1) Still need to fix jack patchbay.
-   a) only one speaker is going into jack_capture??
-   b) jack play is still going into jack-capture ??
-1.75) can Borderlands/loops consist of symlinks?
-1.8) If so, can we make an icon that executes making links to files
-   passed to it, in the loops directory? Just a script that acts on an
-   arbitrary number of files, making a link to each one, in the
-   desired directory
-
-2) Unity Launcher
-
-3) Put licenses everywhere
-
+Write a TODO detailing every planned change

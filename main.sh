@@ -29,8 +29,11 @@ source $(dirname $0)/name_terminal.sh # name_terminal newname
 ## Initialize some things ##
 ############################
 
+# cd into borderlands-tools directory
+cd $borderlands_tools_dir
+
 # Name terminal
-name_terminal borderlands-tools
+name_terminal borderlands-tools-messages
 
 # Parse options
 while getopts "aj:r:x:" opt; do
@@ -49,9 +52,6 @@ while getopts "aj:r:x:" opt; do
       ;;
   esac
 done
-
-# evaluate pwd (hence `quotes`) and save
-borderlands_tools_dir=`pwd`
 
 ################
 ## Start JACK ##
@@ -140,20 +140,21 @@ xdotool search --name 'Borderlands' windowraise
 ## Wait for user command to quit everything ##
 ##############################################
 
-echo "==> Press any key to quit all programs opened by this script" | colorize cyan
+echo "==> Press any key to quit (save your work first)" | colorize cyan
 
 read -n 1 -s # waits for any key press
 
-wmctrl -F -c 'Borderlands' &>/dev/null # -F makes it exact
-wmctrl -c 'rakarrack' &>/dev/null
-wmctrl -c 'backtrackplayback' &>/dev/null
-wmctrl -c 'jack_capture' &>/dev/null
-wmctrl -c 'JACK Audio Connection Kit' &>/dev/null
+#wmctrl -F -c 'Borderlands' &>/dev/null # -F makes it exact
+#wmctrl -c 'rakarrack' &>/dev/null
+#wmctrl -c 'backtrackplayback' &>/dev/null
+#wmctrl -c 'jack_capture' &>/dev/null
 
-if $audacity; then
-    echo "!!! Not closing audacity so you don't lose unsaved work" | colorize blue
-fi
+#if $audacity; then
+#    echo "!!! Not closing audacity or JACK so you don't lose unsaved work" | colorize blue
+#else
+#    wmctrl -c 'JACK Audio Connection Kit' &>/dev/null
+#fi
 
 echo "... Good-bye!" | colorize green
 
-wmctrl -c 'borderlands-tools'
+#wmctrl -c 'borderlands-tools-messages'

@@ -1,8 +1,17 @@
-# TODO
+#!/bin/bash
+# template.sh: template for shell scripts
+# author: Michael Floering
+# 
+# What it does:
+# 1) Act as an example
+#
+# Example usage:
+# Just duplicate it to stub out new scripts, like:
+# cp template.sh new_shell_script_name.sh
 
-
-#1) chmod all scripts in this repo
-#2) do a check that sees which of the requirements and extras the user has installed and throws errors or warnings for missing ones, respectively. exit on error (i.e. if missing JACK).
-#X) make borderlands.desktop somewhere
-#  a) replace Exec path with one that uses the actual users /home/username/ piece -- http://www.brunolinux.com/02-The_Terminal/Find_and%20Replace_with_Sed.html
-#  b) TODO
+source $(dirname $0)/colorize.sh
+source $(dirname $0)/launch_if_possible.sh
+ 
+echo "==> I am green in this area" | colorize green
+# now run the command described above
+launch foo
