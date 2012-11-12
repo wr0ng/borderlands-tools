@@ -6,35 +6,22 @@ The scripts are not that fancy or clever, but I find that the less time taken be
 
 You'll need to install prerequisites and/or configure a few things before starting, but for the impatient here's how you'll use the two utilities in this package.
 
-## I. Instant granification
+## 1. Instant granification
 
 This is how you'll use the first utility if you're just playing.
 
-1. Open **BorderlandsLauncher** by clicking its launcher icon.
-
-![BorderlandsLauncher][launcher]
-
+1. Open **BorderlandsLauncher** by clicking its launcher icon. ![BorderlandsLauncher][launcher]
 2. Start playing!
 
 This is how you'll use it if you're playing over a backtrack and/or recording your session.
 
-1. Open **BorderlandsLauncher** by clicking its launcher icon.
-
-![BorderlandsLauncher][launcher]
-
+1. Open **BorderlandsLauncher** by clicking its launcher icon. ![BorderlandsLauncher][launcher]
 2. Get Audacity rolling.
   * Switch to the Audacity window. (To un-maximize Borderlands press `o`.)
-
-  * To configure Audacity, set audio host to JACK, output device to PulseAudio JACK Source, and input device to PulseAudio JACK Sink.
-
-![Configuring audacity][audacity]
-
+  * To configure Audacity, set audio host to JACK, output device to PulseAudio JACK Source, and input device to PulseAudio JACK Sink. ![Configuring audacity][audacity]
   * Open or import your backtrack if you desire.
-
   * Click record. This will also start playback.
-
 3. Switch back to the Borderlands window (and press `o` to maximize it again if necessary). 
-
 4. Start playing!
 
 After you've finished playing, you'll switch back to Audacity and export or save as necessary. Then you can switch windows to the borderlands-tools terminal and press any key to quit all programs.
@@ -46,7 +33,7 @@ After you've finished playing, you'll switch back to Audacity and export or save
 
 By right clicking the BorderlandsLauncher icon you also get an option to launch the setup without Rakarrack.
 
-## II. Managing loops
+## 2. Managing loops
 
 The second utility is called **BorderlandsLoopManager**.
 
@@ -61,7 +48,9 @@ It has two functions:
 
 # How to set up borderlands-tools
 
-It's written on/for Ubuntu 12.04 but it should work anywhere there's bash, as long as you install the prerequisites (Borderlands, Rakarrack, etc. - see below). Please report any issues you have with setup and I'll be glad to help.
+It's written on/for Ubuntu 12.04 but it should work anywhere there's bash, as long as you install the prerequisites.[1] Regardless of your environment, please report any issues you have with setup and I'll be glad to help troubleshoot and make fixes.
+
+[1]: If you want to use this somewhere besides Ubuntu, note that `main.sh`, `loop_add.sh`, and `loops_clear.sh` are the scripts you should be running: they are the ones that get called by the Unity Launchers.
 
 ## 1. Install prerequisites
 
@@ -142,7 +131,7 @@ Then there are these *extra* productive keyboard shortcuts for moving things amo
 * `Ctrl + Alt + cursor keys` to switch workspaces
 * `Ctrl + Alt + Shift + cursor keys` to switch workspaces and *bring the active window with you*.
 
-# Too long; don't read: about this package
+# About this package
 
 ## No guarantees!
 
@@ -154,11 +143,11 @@ I wrote this because it was imminently useful to me and to a friend. It doubled 
 
 This would be an extremely processor efficient, and it was my original intention for the package. However I haven't been able to get the JACK connections to persist between launches in a predictable fashion.
 
-### Being able to use a different "extra"
+### Being able to use a different effects unit
 
-The extra in this case is Rakarrack.
+Currently only one is supported: Rakarrack.
 
-I have tried to set this up in a modular fashion, and in the future I would like to have launcher options for using PureData, Processing, and/or JACK Effects Rack as an extra. Maybe even combinations thereof!
+I have tried to set this up in a modular fashion, and in the future I would like to have launcher options for using PureData, Processing, and/or JACK Effects Rack as an extra. Hopefully even chaining.
 
 ## License
 
