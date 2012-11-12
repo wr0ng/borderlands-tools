@@ -26,8 +26,8 @@ This is how you'll use it if you're playing over a backtrack and/or recording yo
 
 After you've finished playing, you'll switch back to Audacity and export or save as necessary. Then you can switch windows to the borderlands-tools terminal and press any key to quit all programs.
 
-[launcher]: icons/BorderlandsLauncherScreenshot.png
-[audacity]: ConfiguringAudacityHelp.png
+[launcher]: http://imageshack.us/a/img708/4969/borderlandslauncherscre.png
+[audacity]: http://imageshack.us/a/img248/8540/configuringaudacityhelp.png
 
 #### Less-effects mode
 
@@ -35,16 +35,14 @@ By right clicking the BorderlandsLauncher icon you also get an option to launch 
 
 ## 2. Managing loops
 
-The second utility is called **BorderlandsLoopManager**.
-
-![BorderlandsLauncher][loop]
+The second utility is called **BorderlandsLoopManager**. ![BorderlandsLoopManager][loop]
 
 It has two functions:
 
 * You can drag `.wav` and `.aiff` files onto it, and they will be made available to Borderlands. (Symbolic links to the files will be made in Borderlands's `loops` folder.)
 * There is a button in the right-click menu to clear the Borderlands `loops` folder. This only destroys links, and affects none of your audio files.
 
-[loop]: icons/BorderlandsLoopManagerScreenshot.png
+[loop]: http://imageshack.us/a/img189/9145/borderlandsloopmanagers.png
 
 # How to set up borderlands-tools
 
