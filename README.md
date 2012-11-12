@@ -8,9 +8,7 @@ You'll need to install prerequisites and/or configure a few things before starti
 
 ## 1. Instant granification
 
-This is how you'll use the first utility if you're just playing. It's called **BorderlandsLauncher** and it looks like this:
-
-![BorderlandsLauncher][launcher].
+The first utility is called **BorderlandsLauncher**. This is how you'll use it if you're just playing. 
 
 1. Click the launcher icon.
 2. Start playing!
@@ -20,15 +18,19 @@ This is how you'll use it if you're playing over a backtrack and/or recording yo
 1. Click the BorderlandsLauncher icon.
 2. Get Audacity rolling.
   * Switch to the Audacity window. (To un-maximize Borderlands press `o`.)
-  * To configure Audacity, set audio host to JACK, output device to PulseAudio JACK Source, and input device to PulseAudio JACK Sink.[^1]
+  * To configure Audacity, set audio host to JACK, output device to PulseAudio JACK Source, and input device to PulseAudio JACK Sink. Don't know where to change these settings? See below.
   * Open or import your backtrack if you desire.
   * Click record. This will also start playback.
 3. Switch back to the Borderlands window (and press `o` to maximize it again if necessary). 
 4. Start playing!
 
+![Configuring audacity][audacity]
+
 After you've finished playing, you'll switch back to Audacity and export or save as necessary. Then you can switch windows to the borderlands-tools terminal and press any key to quit all programs.
 
-[^1]: ![Configuring audacity][audacity]
+This is what BorderlandsLauncher looks like:
+
+![BorderlandsLauncher][launcher]
 
 [launcher]: http://imageshack.us/a/img708/4969/borderlandslauncherscre.png
 [audacity]: http://imageshack.us/a/img248/8540/configuringaudacityhelp.png
