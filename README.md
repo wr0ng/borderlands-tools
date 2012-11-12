@@ -104,19 +104,23 @@ I would also recommend turning down the master output a few decibels to prevent 
 
 You are absolutely ready to use the BorderlandsLauncher and BorderlandsLoopManager now. Have fun!
 
-# Optional: configuring borderlands-tools
+---------------------------------------------------------
 
-## config.cfg
+# To get the most out of borderlands-tools
+
+## Configure borderlands-tools
+
+### config.cfg
 
 In this repository there is a file `config.cfg`. It contains several settings that you can adjust to your needs. Notably, you can specify where your copy of Borderlands lives, and you can make it so that the "clear loops" function just executes without asking you if you're sure (my preference).
 
-## Rakarrack default preset
+### Rakarrack default preset
 
 Rakarrack lets you save presets easily. BorderlandsLauncher automatically loads the preset named `default.rkr` in the `rak_presets` directory on launch.
 
 If you want to change the default preset, simply overwrite this file with another.
 
-# Tip: Ubuntu window-switching-fu
+## Harness the power of Ubuntu window-switching-fu
 
 If you don't already know this, holding `Super` in Ubuntu will present you with a bunch of super useful keyboard shortcuts. (The `Super` key is the 'operating system' key, with a Windows, Mac, or another logo.)
 
@@ -131,13 +135,15 @@ Then there are these *extra* productive keyboard shortcuts for moving things amo
 * `Ctrl + Alt + cursor keys` to switch workspaces
 * `Ctrl + Alt + Shift + cursor keys` to switch workspaces and *bring the active window with you*.
 
+----------------------------------------------------
+
 # About this package
 
-## No guarantees!
+## Disclaimer
 
 I wrote this because it was imminently useful to me and to a friend. It doubled as my first adventure into bash scripting. I wasn't able to achieve everything I wanted with it and had to roll back some features that would have made this much more fancy. It has only been tested on Ubuntu 12.04.
 
-## Incomplete work (that may or may not come to fruition)
+## Incomplete work
 
 ### Being able to use terminal-based playback and recording
 
