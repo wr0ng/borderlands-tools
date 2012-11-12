@@ -8,7 +8,9 @@ You'll need to install prerequisites and/or configure a few things before starti
 
 ## 1. Instant granification
 
-This is how you'll use the first utility if you're just playing. It's called **BorderlandsLauncher** and it looks like this: ![BorderlandsLauncher][launcher].
+This is how you'll use the first utility if you're just playing. It's called **BorderlandsLauncher** and it looks like this:
+
+![BorderlandsLauncher][launcher].
 
 1. Click the launcher icon.
 2. Start playing!
@@ -37,7 +39,9 @@ By right clicking the BorderlandsLauncher icon you also get an option to launch 
 
 ## 2. Managing loops
 
-The second utility is called **BorderlandsLoopManager** and it looks like this: ![BorderlandsLoopManager][loop]
+The second utility is called **BorderlandsLoopManager** and it looks like this:
+
+![BorderlandsLoopManager][loop]
 
 It has two functions:
 
