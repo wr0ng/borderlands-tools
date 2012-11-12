@@ -8,23 +8,25 @@ You'll need to install prerequisites and/or configure a few things before starti
 
 ## 1. Instant granification
 
-This is how you'll use the first utility if you're just playing.
+This is how you'll use the first utility if you're just playing. It's called **BorderlandsLauncher** and it looks like this: ![BorderlandsLauncher][launcher].
 
-1. Open **BorderlandsLauncher** by clicking its launcher icon. ![BorderlandsLauncher][launcher]
+1. Click the launcher icon.
 2. Start playing!
 
 This is how you'll use it if you're playing over a backtrack and/or recording your session.
 
-1. Open **BorderlandsLauncher** by clicking its launcher icon. ![BorderlandsLauncher][launcher]
+1. Click the BorderlandsLauncher icon.
 2. Get Audacity rolling.
   * Switch to the Audacity window. (To un-maximize Borderlands press `o`.)
-  * To configure Audacity, set audio host to JACK, output device to PulseAudio JACK Source, and input device to PulseAudio JACK Sink. ![Configuring audacity][audacity]
+  * To configure Audacity, set audio host to JACK, output device to PulseAudio JACK Source, and input device to PulseAudio JACK Sink.[^1]
   * Open or import your backtrack if you desire.
   * Click record. This will also start playback.
 3. Switch back to the Borderlands window (and press `o` to maximize it again if necessary). 
 4. Start playing!
 
 After you've finished playing, you'll switch back to Audacity and export or save as necessary. Then you can switch windows to the borderlands-tools terminal and press any key to quit all programs.
+
+[^1]: ![Configuring audacity][audacity]
 
 [launcher]: http://imageshack.us/a/img708/4969/borderlandslauncherscre.png
 [audacity]: http://imageshack.us/a/img248/8540/configuringaudacityhelp.png
@@ -35,7 +37,7 @@ By right clicking the BorderlandsLauncher icon you also get an option to launch 
 
 ## 2. Managing loops
 
-The second utility is called **BorderlandsLoopManager**. ![BorderlandsLoopManager][loop]
+The second utility is called **BorderlandsLoopManager** and it looks like this: ![BorderlandsLoopManager][loop]
 
 It has two functions:
 
@@ -46,9 +48,9 @@ It has two functions:
 
 # How to set up borderlands-tools
 
-It's written on/for Ubuntu 12.04 but it should work anywhere there's bash, as long as you install the prerequisites.[^1] Regardless of your environment, please report any issues you have with setup and I'll be glad to help troubleshoot and make fixes.
+It's written on/for Ubuntu 12.04 but it should work anywhere there's bash, as long as you install the prerequisites.[^2] Regardless of your environment, please report any issues you have with setup and I'll be glad to help troubleshoot and make fixes.
 
-[^1]: If you want to use this somewhere besides Ubuntu, note that `main.sh`, `loop_add.sh`, and `loops_clear.sh` are the scripts you should be running: they are the ones that get called by the Unity Launchers.
+[^2]: If you want to use this somewhere besides Ubuntu, note that `main.sh`, `loop_add.sh`, and `loops_clear.sh` are the scripts you should be running: they are the ones that get called by the Unity Launchers.
 
 ## 1. Install prerequisites
 
