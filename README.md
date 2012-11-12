@@ -6,7 +6,7 @@ The scripts are not that fancy or clever, but I find that the less time taken be
 
 You'll need to install prerequisites and/or configure a few things before starting, but for the impatient here's how you'll use the two utilities in this package.
 
-## 1. Instant granification ![BorderlandsLauncher][launcher]
+## ![BorderlandsLauncher][launcher] Instant granification 
 
 The first utility is called **BorderlandsLauncher**. This is how you'll use it if you're just playing. 
 
@@ -28,10 +28,6 @@ This is how you'll use it if you're playing over a backtrack and/or recording yo
 
 After you've finished playing, you'll switch back to Audacity and export or save as necessary. Then you can switch windows to the borderlands-tools terminal and press any key to quit all programs.
 
-This is what BorderlandsLauncher looks like:
-
-![BorderlandsLauncher][launcher]
-
 [launcher]: http://imageshack.us/a/img708/4969/borderlandslauncherscre.png
 [audacity]: http://imageshack.us/a/img248/8540/configuringaudacityhelp.png
 
@@ -39,11 +35,9 @@ This is what BorderlandsLauncher looks like:
 
 By right clicking the BorderlandsLauncher icon you also get an option to launch the setup without Rakarrack.
 
-## 2. Managing loops
+## ![BorderlandsLoopManager][loop] Managing loops
 
 The second utility is called **BorderlandsLoopManager** and it looks like this:
-
-![BorderlandsLoopManager][loop]
 
 It has two functions:
 
