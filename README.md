@@ -100,11 +100,11 @@ By default rakarrack starts with FX off (meaning wet mix 0%) and you have to tur
         > Audio tab
           > FX On at Start (first option)
 
-I would also recommend turning down the master output a few decibels to prevent clipping..
+I would also recommend turning down the master output a few decibels to prevent clipping.
 
-## You're done!
+### That's it
 
-You are absolutely ready to use the BorderlandsLauncher and BorderlandsLoopManager now. Have fun!
+You are now ready to use the BorderlandsLauncher and BorderlandsLoopManager now. Have fun!
 
 ---------------------------------------------------------
 
