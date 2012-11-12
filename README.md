@@ -6,7 +6,7 @@ The scripts are not that fancy or clever, but I find that the less time taken be
 
 You'll need to install prerequisites and/or configure a few things before starting, but for the impatient here's how you'll use the two utilities in this package.
 
-## 1. Instant granification
+## 1. Instant granification ![BorderlandsLauncher][launcher]
 
 The first utility is called **BorderlandsLauncher**. This is how you'll use it if you're just playing. 
 
