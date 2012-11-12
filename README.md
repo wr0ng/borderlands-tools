@@ -50,6 +50,8 @@ It has two functions:
 
 [loop]: http://imageshack.us/a/img189/9145/borderlandsloopmanagers.png
 
+----------------------------------------------------------
+
 # How to set up borderlands-tools
 
 It's written on/for Ubuntu 12.04 but it should work anywhere there's bash, as long as you install the prerequisites.[^2] Regardless of your environment, please report any issues you have with setup and I'll be glad to help troubleshoot and make fixes.
@@ -91,7 +93,7 @@ Next run the setup script:
 
 It will create two Unity Launchers (files with the `.desktop` extension) named **BorderlandsLauncher** and **BorderlandsLoopManager**. It will then copy these into the folder where Ubuntu stores Unity Launchers (`~/.local/share/applications`) and open a nautilus file browser in that folder.
 
-Drag **BorderlandsLauncher** and **BorderlandsLoopManager** onto your launcher. You may need to right-click them and click *Lock to Launcher*.
+Drag the two icons onto your launcher. You may or may not need to right-click them and click *Lock to Launcher*.
 
 ## 3. Configure Rakarrack
 
