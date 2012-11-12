@@ -9,3 +9,4 @@
    - Use straight JACK (maybe even no QjackCtl) for plumbing:
    seemingly it's actually easier to use commands to connect programs
    persistently, than to use a graphical interface http://digitaldub.wordpress.com/2009/12/16/linux-audio-session-scripting/
+   - What else?
