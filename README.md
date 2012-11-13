@@ -50,9 +50,9 @@ It has two functions:
 
 # How to set up borderlands-tools
 
-It's written on/for Ubuntu 12.04 but it should work anywhere there's bash, as long as you install the prerequisites.[^2] Regardless of your environment, please report any issues you have with setup and I'll be glad to help troubleshoot and make fixes.
+It's written on/for Ubuntu 12.04 but it should work anywhere there's bash, as long as you install the prerequisites. Regardless of your environment, please report any issues you have with setup and I'll be glad to help troubleshoot and make fixes.
 
-[^2]: If you want to use this somewhere besides Ubuntu, note that `main.sh`, `loop_add.sh`, and `loops_clear.sh` are the scripts you should be running: they are the ones that get called by the Unity Launchers.
+If you want to use this somewhere besides Ubuntu, note that `main.sh`, `loop_add.sh`, and `loops_clear.sh` are the scripts you should be running: they are the ones that get called by the Unity Launchers.
 
 ## 1. Install prerequisites
 
