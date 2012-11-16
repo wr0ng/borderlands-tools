@@ -122,6 +122,20 @@ Rakarrack lets you save presets easily. BorderlandsLauncher automatically loads 
 
 If you want to change the default preset, simply overwrite this file with another.
 
+## Add a keyboard shortcut to display Borderlands keybindings
+
+Most of the cool stuff you can do with Borderlands is through keyboard shortcuts. There are a good amount of them, so it takes a bit to memorize. This could be prohibitive.
+
+So to overcome this, you can make a keyboard shortcut that calls the following command:
+
+    bash /path/to/borderlands-tools/keybindings_display.sh
+
+This displays (my own edit of) the author's documentation on the controls. This is a slightly abbreviated version, meant to serve as a reminder - go to [the official documentation](https://ccrma.stanford.edu/%7Ecarlsonc/256a/Borderlands/) for complete instructions and read those before you rely on these.
+
+The advantage of binding a keyboard shortcut to this is that you can then accessit easily in the midst of a Borderlands session.
+
+The shortcut I use is `Ctrl + Shift + O` (that's the letter not a zero). Pressing return should close the notification regardless of your personal shortcut.
+
 ## Harness the power of Ubuntu window-switching-fu
 
 If you don't already know this, holding `Super` in Ubuntu will present you with a bunch of super useful keyboard shortcuts. (The `Super` key is the 'operating system' key, with a Windows, Mac, or another logo.)
