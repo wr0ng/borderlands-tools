@@ -124,17 +124,17 @@ If you want to change the default preset, simply overwrite this file with anothe
 
 ## Add a keyboard shortcut to display Borderlands keybindings
 
-Most of the cool stuff you can do with Borderlands is through keyboard shortcuts. There are a good amount of them, so it takes a bit to memorize. This could be prohibitive.
+Most of the cool stuff you can do with Borderlands is through keyboard controls. There are a good amount of them, so it takes a bit to memorize. This could be prohibitive, so to overcome this, you can make a keyboard shortcut that displays Borderlands' keyboard controls. Configure a keyboard shortcut to call the following command:
 
-So to overcome this, you can make a keyboard shortcut that calls the following command:
+    bash </path/to/borderlands-tools>/keybindings_display.sh
 
-    bash /path/to/borderlands-tools/keybindings_display.sh
+Insert your own path, like `/home/m/bin/borderlands-tools/keybindings_display.sh`. (Note that `~/bin/...` and `$HOME/bin/...` will NOT work right if you are using the Ubuntu keyboard shortcuts editor.) 
 
-This displays (my own edit of) the author's documentation on the controls. This is a slightly abbreviated version, meant to serve as a reminder - go to [the official documentation](https://ccrma.stanford.edu/%7Ecarlsonc/256a/Borderlands/) for complete instructions and read those before you rely on these.
-
-The advantage of binding a keyboard shortcut to this is that you can then accessit easily in the midst of a Borderlands session.
+The advantage of binding a keyboard shortcut to this is that you can then accessit easily in the middle of a Borderlands session.
 
 The shortcut I use is `Ctrl + Shift + O` (that's the letter not a zero). Pressing return should close the notification regardless of your personal shortcut.
+
+**This is not a substitute for the official documentation!** This command displays my own abbreviation of the author's documentation on the controls. This feature should only serve as a reminder - go to [the official documentation](https://ccrma.stanford.edu/%7Ecarlsonc/256a/Borderlands/) for complete instructions and read those before you rely on these.
 
 ## Harness the power of Ubuntu window-switching-fu
 
