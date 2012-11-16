@@ -1,0 +1,35 @@
+Cloud Parameters
+=====================
+Z key          	Pitch
+L key  		Pitch LFO: frequency
+K key 		Pitch LFO: amplitude
+B key 		Volume in dB
+D key 		Duration (ms)
+F key 		Switch grain direction (FORWARD, BACKWARD, RANDOM)
+S key   	Overlap
+W key 		Cycle window type 
+W key + 1-6 	Jump to window type (HANN, TRI, EXPDEC, REXPDEC, SINC, RAND)
+A key 		Toggle cloud on/off
+V key 		Add (remove) voices
+X key 		Map mouse X to grain position randomness
+Y key 		Map mouse Y extent of grain position randomness
+R key 		Map mouse XY to grain position randomness
+T key 		Switch spatialization modes
+
+Cloud Addition and Selection
+============================
+G key (+ shift) Add (remove) cloud to/from end of collection
+Delete key 	Remove selected cloud
+
+Rectangles/waveforms
+====================
+TAB key		Cycle selection of overlapping rectangles under mouse
+R key + drag 	Resize
+F key 		Flip orientation
+
+Entry/Exit/Navigation
+=====================
+ESC     	Quit
+? key 		Hide/Show Title Screen
+o key 		Toggle full screen/windowed
+Arrow keys 	Move camera
