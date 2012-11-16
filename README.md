@@ -130,9 +130,7 @@ Most of the cool stuff you can do with Borderlands is through keyboard controls.
 
 Insert your own path, like `/home/m/bin/borderlands-tools/keybindings_display.sh`. (Note that `~/bin/...` and `$HOME/bin/...` will NOT work right if you are using the Ubuntu keyboard shortcuts editor.) 
 
-The advantage of binding a keyboard shortcut to this is that you can then accessit easily in the middle of a Borderlands session.
-
-The shortcut I use is `Ctrl + Shift + O` (that's the letter not a zero). Pressing return should close the notification regardless of your personal shortcut.
+The advantage of binding a keyboard shortcut to this is that you can then accessit easily in the middle of a Borderlands session. The shortcut I use is `Ctrl + Shift + O` (that's the letter not a zero). Pressing return should close the notification regardless of your personal shortcut.
 
 **This is not a substitute for the official documentation!** This command displays my own abbreviation of the author's documentation on the controls. This feature should only serve as a reminder - go to [the official documentation](https://ccrma.stanford.edu/%7Ecarlsonc/256a/Borderlands/) for complete instructions and read those before you rely on these.
 
