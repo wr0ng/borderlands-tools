@@ -9,3 +9,10 @@ echo "==> Making link to file in $borderlands_directory/loops" | colorize green
 ln -s $1 $borderlands_directory/loops/$(basename "$1")
 #     ^ first argument
 #                                  ^ get just filename from first arg
+
+
+
+# TO DEBUG, ENABLE:
+#echo "$@" $borderlands_directory/loops/$(basename "$1")
+#
+#sleep 10s

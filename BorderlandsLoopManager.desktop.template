@@ -2,7 +2,7 @@
 Version=1.0
 Name=BorderlandsLoopsManager
 Comment=Copy a loop or loops into the Borderlands/loops directory
-Exec=$HOME/bin/borderlands-tools/loop_add.sh
+Exec=$HOME/bin/borderlands-tools/loop_add.sh %U
 Icon=$HOME/bin/borderlands-tools/icons/loop_add.png
 Terminal=false
 Type=Application
