@@ -5,12 +5,13 @@
 source $(dirname $0)/config.cfg
 source $(dirname $0)/colorize.sh
 
-echo "==> Making link to file in $borderlands_directory/loops" | colorize green
-ln -s $1 $borderlands_directory/loops/$(basename "$1")
-#     ^ first argument
-#                                  ^ get just filename from first arg
-
-
+for f in "$@"
+do 
+    echo "==> Making link to file in $borderlands_directory/loops" | colorize green
+    ln -s $f $borderlands_directory/loops/$(basename "$f")
+    #     ^ full path
+    #                                     ^ get just filename
+done
 
 # TO DEBUG, ENABLE:
 #echo "$@" $borderlands_directory/loops/$(basename "$1")
