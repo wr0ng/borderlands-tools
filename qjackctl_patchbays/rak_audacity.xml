@@ -30,9 +30,9 @@
  </input-sockets>
  <slots/>
  <cables>
+  <cable output="borderlands_out" input="rakarrack_in" type="jack-audio"/>
   <cable output="rakarrack_out" input="audacity_in" type="jack-audio"/>
   <cable output="rakarrack_out" input="systemoutput_in" type="jack-audio"/>
-  <cable output="borderlands_out" input="rakarrack_in" type="jack-audio"/>
   <cable output="audacity_out" input="systemoutput_in" type="jack-audio"/>
  </cables>
 </patchbay>
