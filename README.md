@@ -87,13 +87,15 @@ Next run the setup script:
     cd ~/bin/borderlands-tools/ # or wherever else you put it
     bash setup.sh
 
-It will create two Unity Launchers (files with the `.desktop` extension) named **BorderlandsLauncher** and **BorderlandsLoopManager**. It will then copy these into the folder where Ubuntu stores Unity Launchers (`~/.local/share/applications`) and open a nautilus file browser in that folder.
+It will create two Unity Launchers named **BorderlandsLauncher** and **BorderlandsLoopManager**. Then it copies these into `~/.local/share/applications` and open a nautilus file browser in that folder.
 
 Drag the two icons onto your launcher. You may or may not need to right-click them and click *Lock to Launcher*.
 
+(`~/.local/share/applications` is where Ubuntu stores Unity Launchers for your user. If you want these icons to appear for all users, move these Unity Launchers to `/usr/share/applications` and then drag them onto the launcher.)
+
 ## 3. Configure Rakarrack
 
-By default rakarrack starts with FX off (meaning wet mix 0%) and you have to turn FX on manually, each time you open it. Fortunately Rakarrack makes it very easy to change this setting:
+By default rakarrack starts with effects off, meaning you would have to turn effects on manually each time you open it. Fortunately Rakarrack makes it very easy to change this:
 
     Settings menu 
       > Preferences
