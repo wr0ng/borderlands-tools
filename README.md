@@ -112,6 +112,8 @@ You are now ready to use the BorderlandsLauncher and BorderlandsLoopManager now.
 
 # To get the most out of borderlands-tools
 
+These are optional steps, but they're worthwhile.
+
 ## Configure borderlands-tools
 
 ### config.cfg
@@ -145,7 +147,7 @@ Then there are these *extra* productive keyboard shortcuts for moving things amo
 * `Ctrl + Alt + cursor keys` to switch workspaces
 * `Ctrl + Alt + Shift + cursor keys` to switch workspaces and *bring the active window with you*.
 
-### Make Rakarrack load your own preset bank every time
+## Make Rakarrack load your own preset bank every time
 
 ~~Rakarrack lets you save presets easily. BorderlandsLauncher automatically loads the preset named `default.rkr` in the `rak_presets` directory on launch. If you want to change the default preset, simply overwrite this file with another.~~
 
