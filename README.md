@@ -112,8 +112,6 @@ You are now ready to use the BorderlandsLauncher and BorderlandsLoopManager now.
 
 # To get the most out of borderlands-tools
 
-These are optional steps, but they're worthwhile.
-
 ## Configure borderlands-tools
 
 ### config.cfg
