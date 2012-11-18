@@ -120,9 +120,22 @@ In this repository there is a file `config.cfg`. It contains several settings th
 
 ### Rakarrack default preset
 
-Rakarrack lets you save presets easily. BorderlandsLauncher automatically loads the preset named `default.rkr` in the `rak_presets` directory on launch.
+~~Rakarrack lets you save presets easily. BorderlandsLauncher automatically loads the preset named `default.rkr` in the `rak_presets` directory on launch. If you want to change the default preset, simply overwrite this file with another.~~
 
-If you want to change the default preset, simply overwrite this file with another.
+I have not been able to get Rakarrack to load presets from the commandline in a predictable fashion. Instead, Rakarrack seems to always just load the preset bank and individual preset that you had open last time you closed it.
+
+This leaves you with a few options for controlling its default preset. First, you could switch to the Rakarrack window and dial in new settings every time. Second, you could work with the factory preset bank and save new presets there. Third - which seems preferable - you could make a new bank for working with Borderlands.
+
+I have provided a bank in the `rak_presets` directory for just this purpose. To make Rakarrack load it by default, go into its preferences like so:
+
+    Settings menu
+      > Preferences
+        > Bank
+          > Bank Filename
+            > Browse
+              # ~/bin/borderlands-tools/rak_presets/bank.rkrb
+
+Then you can save all your own presets to this bank. Of course you can also keep it somewhere else, but you may need to go through Rakarrack's interface to initially save the bank somewhere.
 
 ## Add a keyboard shortcut to display Borderlands keybindings
 
