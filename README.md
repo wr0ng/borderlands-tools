@@ -118,25 +118,6 @@ You are now ready to use the BorderlandsLauncher and BorderlandsLoopManager now.
 
 In this repository there is a file `config.cfg`. It contains several settings that you can adjust to your needs. Notably, you can specify where your copy of Borderlands lives, and you can make it so that the "clear loops" function just executes without asking you if you're sure (my preference).
 
-### Rakarrack default preset
-
-~~Rakarrack lets you save presets easily. BorderlandsLauncher automatically loads the preset named `default.rkr` in the `rak_presets` directory on launch. If you want to change the default preset, simply overwrite this file with another.~~
-
-I have not been able to get Rakarrack to load presets from the commandline in a predictable fashion. Instead, Rakarrack seems to always just load the preset bank and individual preset that you had open last time you closed it.
-
-This leaves you with a few options for controlling its default preset. First, you could switch to the Rakarrack window and dial in new settings every time. Second, you could work with the factory preset bank and save new presets there. Third - which seems preferable - you could make a new bank for working with Borderlands.
-
-I have provided a bank in the `rak_presets` directory for just this purpose. To make Rakarrack load it by default, go into its preferences like so:
-
-    Settings menu
-      > Preferences
-        > Bank
-          > Bank Filename
-            > Browse
-              # ~/bin/borderlands-tools/rak_presets/bank.rkrb
-
-Then you can save all your own presets to this bank. Of course you can also keep it somewhere else, but you may need to go through Rakarrack's interface to initially save the bank somewhere.
-
 ## Add a keyboard shortcut to display Borderlands keybindings
 
 Most of the cool stuff you can do with Borderlands is through keyboard controls. There are a good amount of them, so it takes a bit to memorize. This could be prohibitive, so to overcome this, you can make a keyboard shortcut that displays Borderlands' keyboard controls. Configure a keyboard shortcut to call the following command:
@@ -164,6 +145,27 @@ Then there are these *extra* productive keyboard shortcuts for moving things amo
 * `Ctrl + Alt + cursor keys` to switch workspaces
 * `Ctrl + Alt + Shift + cursor keys` to switch workspaces and *bring the active window with you*.
 
+### Make Rakarrack load your own preset bank every time
+
+~~Rakarrack lets you save presets easily. BorderlandsLauncher automatically loads the preset named `default.rkr` in the `rak_presets` directory on launch. If you want to change the default preset, simply overwrite this file with another.~~
+
+I have not been able to get Rakarrack to load presets from the commandline in a predictable fashion. Instead, Rakarrack seems to always just load the preset bank specified in the Rakarrack settings, and load the individual preset with the *number* you had open last time you used Rakarrack.
+
+So for example you might modify preset number 7 from the factory bank and then click use Rakarrack's buttons to 'save preset', and save it somewhere. But next time you open rakarrack it will load number 7 from the factory bank, not the last actual preset you used.
+
+This leaves you with a few options for controlling the default preset it loads. First, you could switch to the Rakarrack window and dial in new settings every time. Second, you could work with the factory preset bank and save new presets there, by saving the actual *bank* every time you want to save changes to a preset. Third - which seems preferable - you could make a new bank for working with Borderlands, and save that bank whenever you make changes to its presets.
+
+I have provided a bank in the `rak_presets` directory for just this purpose. To make Rakarrack load it by default, go into its preferences like so:
+
+    Settings menu
+      > Preferences
+        > Bank
+          > Bank Filename
+            > Browse
+              # ~/bin/borderlands-tools/rak_presets/bank.rkrb
+
+Then you can save all your own presets to this bank. Of course you can also keep it somewhere else, but you may need to go through Rakarrack's interface to initially save the bank somewhere.
+
 ----------------------------------------------------
 
 # About this package
@@ -180,9 +182,7 @@ This would be an extremely processor efficient, and it was my original intention
 
 ### Being able to use a different effects unit
 
-Currently only one is supported: Rakarrack.
-
-I have tried to set this up in a modular fashion, and in the future I would like to have launcher options for using PureData, Processing, and/or JACK Effects Rack as an extra. Hopefully even chaining.
+Currently only one is supported: Rakarrack. I have tried to set this up in a modular fashion, and in the future I would like to have other options in the BorderlandsLauncher, to let you launch PureData, Processing, and/or JACK Effects Rack as an effects unit. Hopefully even combinations thereof.
 
 ## License
 
