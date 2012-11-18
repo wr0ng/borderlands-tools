@@ -18,7 +18,7 @@ This is how you'll use it if you're playing over a backtrack and/or recording yo
 1. Click the BorderlandsLauncher icon.
 2. Get Audacity rolling.
   * Switch to the Audacity window. (To un-maximize Borderlands press `o`.)
-  * To configure Audacity, ~~set audio host to JACK, output device to PulseAudio JACK Source, and input device to PulseAudio JACK Sink~~ set audio host to JACK, output device to system, and input device to rakarrack. Don't know where to change these settings? See below.
+  * To configure Audacity, set audio host to JACK, output device to system, and input device to rakarrack. Don't know where to change these settings? See below.
   * Open or import your backtrack if you desire.
   * Click record. This will also start playback.
 3. Switch back to the Borderlands window (and press `o` to maximize it again if necessary). 
