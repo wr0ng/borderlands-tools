@@ -8,7 +8,7 @@ source $(dirname $0)/colorize.sh
 for f in "$@"
 do 
     echo "==> Making link to file in $borderlands_directory/loops" | colorize green
-    ln -s $f $borderlands_directory/loops/$(basename "$f")
+    ln -s "$f" $borderlands_directory/loops/$(basename "$f")
     #     ^ full path
     #                                     ^ get just filename
 done
