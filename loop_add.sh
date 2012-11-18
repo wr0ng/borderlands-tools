@@ -14,6 +14,6 @@ do
 done
 
 # TO DEBUG, ENABLE:
-#echo "$@" $borderlands_directory/loops/$(basename "$1")
-#
+#echo "$@" $borderlands_directory/loops/$(basename "$f")
+
 #sleep 10s
