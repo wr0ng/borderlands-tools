@@ -16,3 +16,6 @@ tramp
 
 # .desktop files
 *.desktop
+
+# local settings
+local.cfg
