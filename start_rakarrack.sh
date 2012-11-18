@@ -25,4 +25,4 @@ if [[ -z $preset ]]; then
 fi
 
 echo "==> Attempting to launch rakarrack" | colorize yellow
-launch rakarrack --Load $preset --Bank ./rak_presets/bank.rkrb
+launch rakarrack --Bank ./rak_presets/bank.rkrb --Load $preset 
