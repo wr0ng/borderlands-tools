@@ -67,6 +67,7 @@ These scripts depend on the following programs.
 You should be able to get all of these - except for Borderlands - with the following command:
 
     sudo apt-get install qjackctl jackd2 libjack-jackd2-dev rakarrack audacity
+
 ### Haven't installed Borderlands?
 
 If you haven't installed Borderlands yet, go [here](https://ccrma.stanford.edu/~carlsonc/256a/Borderlands/) for the primary (open source) release, or [here](https://github.com/hangtwenty/borderlands-granular-pitch-patch) for my little patch of it. If you are using Ubuntu 12.04, see [here](http://hangtwenty.ruhoh.com/posts/building-borderlands-granular-on-ubuntu-12-04-lts) for my tutorial on how to obtain the various prerequisites necessary to compile it.

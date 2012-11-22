@@ -1,7 +1,22 @@
-- test again
-- README
-   - Add screenshot of the obvious way to change the audio settings in
-   Audacity, on that little panel
+- Add to README:
+After everything opens, you may find that only the left or right
+   channel of Borderlands is feeding into Rakarrack. Check the meters;
+   this happens every time on my computer. The fix is to do this:
+1. Switch windows to QjackCtl
+2. Click "Patchbay"
+3. There will be a dropdown that says `rak_audacity`. Click the
+   "Activate" button to the right of it.
+That should do it!
+
+--------
+
+This is a general tip to do with using JACK and/or QjackCtl. Sometimes
+   after closing and reopening QjackCtl, I find that it can't start up
+   properly. If this happens to you, close it. Then open a new
+   terminal. Execute `ps -A | grep jackdbus`. This will display the
+   process identifier for jackdbus (the number on the left). You want to kill it; execute `kill
+   -9 <somenumber>` but replace `<somenumber>` with jackdbus's process
+   identifier. Now QjackCtl should be able to restart JACK without a hitch.
 
 
 - Write a TODO detailing every planned change
