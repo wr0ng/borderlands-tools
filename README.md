@@ -103,6 +103,14 @@ By default rakarrack starts with effects off, meaning you would have to turn eff
         > Audio tab
           > FX On at Start (first option)
 
+If you're using a laptop you should probably also go into the Rakarrack menu and tell it not to autoconnect, or it might automatically pick up your computer's microphone.
+
+    Settings menu
+      > Preferences
+        > JACK
+          > UNCHECK: Auto Connect In
+          > UNCHECK: Auto Connect Out
+
 I would also recommend turning down the master output a few decibels to prevent clipping.
 
 ### That's it
