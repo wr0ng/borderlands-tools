@@ -16,7 +16,7 @@ The first utility is called **BorderlandsLauncher**. This is how you'll use it i
 This is how you'll use it if you're playing over a backtrack and/or recording your session.
 
 1. Click the BorderlandsLauncher icon.
-2. *Optional.* Do this QjackCtl quirk workaround.
+2. *Optional.* Do this quick workaround to ensure that QjackCtl works as expected.
   * For me, QjackCtl loads the default patchbay correctly, but it only connects one channel of Borderlands to Rakarrack.   
   * To fix: switch to the QjackCtl window, click `Patchbay`, and then click `Activate`. Now both channels should be connected. 
 3. Get Audacity rolling.
