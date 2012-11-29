@@ -16,13 +16,16 @@ The first utility is called **BorderlandsLauncher**. This is how you'll use it i
 This is how you'll use it if you're playing over a backtrack and/or recording your session.
 
 1. Click the BorderlandsLauncher icon.
-2. Get Audacity rolling.
+2. *Optional.* Do this QjackCtl quirk workaround.
+  * For me, QjackCtl loads the default patchbay correctly, but it only connects one channel of Borderlands to Rakarrack.   
+  * To fix: switch to the QjackCtl window, click `Patchbay`, and then click `Activate`. Now both channels should be connected. 
+3. Get Audacity rolling.
   * Switch to the Audacity window. (To un-maximize Borderlands press `o`.)
   * To configure Audacity, set audio host to JACK, output device to system, and input device to rakarrack. Don't know where to change these settings? See below.
   * Open or import your backtrack if you desire.
   * Click record. This will also start playback.
-3. Switch back to the Borderlands window (and press `o` to maximize it again if necessary). 
-4. Start playing!
+4. Switch back to the Borderlands window (and press `o` to maximize it again if necessary). 
+5. Start playing!
 
 ![Configuring audacity][audacity]
 
@@ -67,6 +70,7 @@ These scripts depend on the following programs.
 You should be able to get all of these - except for Borderlands - with the following command:
 
     sudo apt-get install qjackctl jackd2 libjack-jackd2-dev rakarrack audacity
+
 
 ### Haven't installed Borderlands?
 
@@ -154,9 +158,11 @@ Then there are these *extra* productive keyboard shortcuts for moving things amo
 * `Ctrl + Alt + cursor keys` to switch workspaces
 * `Ctrl + Alt + Shift + cursor keys` to switch workspaces and *bring the active window with you*.
 
-## Make Rakarrack load your own preset bank every time
+## ~~Make Rakarrack load your own preset bank every time~~
 
 ~~Rakarrack lets you save presets easily. BorderlandsLauncher automatically loads the preset named `default.rkr` in the `rak_presets` directory on launch. If you want to change the default preset, simply overwrite this file with another.~~
+
+## Note on Rakarrack presets and banks
 
 I have not been able to get Rakarrack to load presets from the commandline in a predictable fashion. Instead, Rakarrack seems to always just load the preset bank specified in the Rakarrack settings, and load the individual preset with the *number* you had open last time you used Rakarrack.
 
