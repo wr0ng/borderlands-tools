@@ -1,6 +1,8 @@
 # borderlands-tools
 
-The main function of borderlands-tools is  to launch [Borderlands granular](https://ccrma.stanford.edu/~carlsonc/256a/Borderlands/) with some auxiliary programs: QjackCtl, Rakarrack effects rack, and Audacity. Using borderlands-tools, it should take about 10 seconds to get playing, or about 30 seconds if you're starting a backtrack and recording your session.
+The main function of borderlands-tools is  to launch [Borderlands granular](https://ccrma.stanford.edu/~carlsonc/256a/Borderlands/) with some auxiliary programs: QjackCtl, Rakarrack effects rack, and Audacity. If you use borderlands-tools, it should take you about ten seconds to get playing, or about thirty seconds if you're starting a backtrack and recording your session. For me, this is much faster than opening and setting up each piece of the chain manually.
+
+The secondary function is very basic but also very useful: it helps you manage your `loops` folder expediently.
 
 The scripts are not that fancy or clever, but I find that the less time taken between inspiration and action, the better - especially when it comes to music.
 
@@ -187,7 +189,9 @@ Then you can save all your own presets to this bank. Of course you can also keep
 
 ## Disclaimer
 
-I wrote this because it was imminently useful to me and to a friend. It doubled as my first adventure into bash scripting. I wasn't able to achieve everything I wanted with it and had to roll back some features that would have made this much more fancy. It has only been tested on Ubuntu 12.04.
+I wrote this because it was imminently useful to me and to a friend. It doubled as my first adventure into bash scripting. I wasn't able to achieve everything I wanted with it and had to roll back some features that would have made this much more fancy. I use it daily, however, so I plan on incrementally improving it as time goes on.
+
+It has only been tested on Ubuntu 12.04.
 
 ## Incomplete work
 
